@@ -6,6 +6,8 @@ import { useState } from "react";
 
 import { Link } from "react-router-dom";
 
+import "./Navbar.css";
+
 
 export default function Navbar() {
     const [isHouseHovering, setOnHouseHovering] = useState(false);
@@ -26,8 +28,6 @@ export default function Navbar() {
     const onAtMouseEnter = () => {
         setOnAtHovering(true);
     };
-
-
 
     const onHouseMouseLeave = () => {
         // console.log("Mouse left");
@@ -50,30 +50,29 @@ export default function Navbar() {
 
     return (
         <div className="navbar">
-            <Link to="home">
+            <Link to="/">
                 <button className="house-button">
-                    <House size={32} color="#3c2a21" weight={houseWeight} onMouseEnter={onHouseMouseEnter} onMouseLeave={onHouseMouseLeave} />
-                    {/* <House size={32} color="#3c2a21" weight="bold" /> */}
+                    <House className="navBtn" weight={houseWeight} onMouseEnter={onHouseMouseEnter} onMouseLeave={onHouseMouseLeave} />
                 </button>
-            </Link>    
+            </Link>
 
             <Link to="order">
                 <button className="cart-button">
-                    <ShoppingCart size={32} color="#3c2a21" weight={cartWeight} onMouseEnter={onCartMouseEnter} onMouseLeave={onCartMouseLeave} />
+                    <ShoppingCart className="navBtn" weight={cartWeight} onMouseEnter={onCartMouseEnter} onMouseLeave={onCartMouseLeave} />
                 </button>
             </Link>
-            
+
 
 
             <Link to="about">
                 <button className="info-button">
-                    <Info size={32} color="#3c2a21" weight={infoWeight} onMouseEnter={onInfoMouseEnter} onMouseLeave={onInfoMouseLeave} />
+                    <Info className="navBtn" weight={infoWeight} onMouseEnter={onInfoMouseEnter} onMouseLeave={onInfoMouseLeave} />
                 </button>
             </Link>
 
             <Link to="socials">
                 <button className="at-button">
-                    <At size={32} color="#3c2a21" weight={atWeight} onMouseEnter={onAtMouseEnter} onMouseLeave={onAtMouseLeave} />
+                    <At className="navBtn" weight={atWeight} onMouseEnter={onAtMouseEnter} onMouseLeave={onAtMouseLeave} />
                 </button>
             </Link>
 
