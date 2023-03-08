@@ -14,7 +14,7 @@ function App() {
       <GroupComponent />
 
       <Routes>
-        <Route path="/home" element={ <Home /> } />
+        <Route path="/" element={ <Home /> } />
         <Route path="/about" element={ <About /> } />
         <Route path="/login" element={ <Login /> } />
         <Route path="/order" element={ <Order /> } />
