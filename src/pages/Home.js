@@ -1,18 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Image from "../assets/coffee-beans-with-jute-bag.png";
+import "../css/Home.css";
 
 function Home(){
     return(
         <div className="page home-page">
-            <div className="coffee-jute-bag">
-                <img src={Image} width="600" height="600" alt="coffee-jute-bag"/>
+            <div className="container">
+                <div className="coffee-bean-bag">
+                    <img src={Image} alt="coffee-bean-bag"/>
+                </div>
 
                 <p className="home-text">
-                    Get the best <br />
-                    COFFEE <br />
-                    ever! <br />
-                    
+                    Get the best 
+                    <br />
+                    COFFEE 
+                    <br />
+                    ever! 
+                    <br />
                     <br />
                     Order NOW!
                 </p>

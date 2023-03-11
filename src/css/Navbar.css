@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navbar{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  position: absolute; /* or "fixed" if you want it to stay in place when scrolling */
+  top: 0;
+  right: 0;
+}
+
+button{
+  pointer-events: none;
+}
+
+button img{
+  pointer-events: auto;
+  /* cursor: pointer; */
+  padding: 5px;
+  margin: 15px;
+  background: rgb(229,229,203);
+  border-radius: 50%;
+  box-shadow: 5px 5px 5px 0px rgb(0 0 0 / 31%);
+  filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.3));
+}
+
+
+.login-btn{
+  margin-top: 20px;
+  margin-bottom: 80px;
+}
+
+/* Login-icon */
+
+.login-btn {
+  position: relative;
+}
+
+.login-btn:hover .login-btn-hover {
+  visibility: visible;
+}
+
+.login-btn:hover img:first-child {
+  opacity: 0;
+}
+.login-btn .login-btn-hover {
+  background: rgb(61,43,33);
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+
+/* House-icon: */
+
+.house-btn {
+  position: relative;
+}
+
+.house-btn:hover .house-btn-hover {
+  visibility: visible;
+}
+
+.house-btn:hover img:first-child {
+  opacity: 0;
+}
+.house-btn .house-btn-hover {
+  background: rgb(61,43,33);
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+
+
+/* Cart-icon: */
+
+.cart-btn {
+  position: relative;
+}
+
+.cart-btn:hover .cart-btn-hover {
+  visibility: visible;
+}
+
+.cart-btn:hover img:first-child {
+  opacity: 0;
+}
+.cart-btn .cart-btn-hover {
+  background: rgb(61,43,33);
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+
+
+/* About-icon: */
+
+.about-btn {
+  position: relative;
+}
+
+.about-btn:hover .about-btn-hover {
+  visibility: visible;
+}
+
+.about-btn:hover img:first-child {
+  opacity: 0;
+}
+.about-btn .about-btn-hover {
+  background: rgb(61,43,33);
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+
+/* At-icon */
+
+.at-btn {
+  position: relative;
+}
+
+.at-btn:hover .at-btn-hover {
+  visibility: visible;
+}
+
+.at-btn:hover img:first-child {
+  opacity: 0;
+}
+.at-btn .at-btn-hover {
+  background: rgb(61,43,33);
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
