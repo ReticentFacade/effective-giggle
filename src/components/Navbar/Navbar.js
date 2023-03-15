@@ -1,14 +1,6 @@
-import { House } from "@phosphor-icons/react";
-import { ShoppingCart } from "@phosphor-icons/react";
-import { Info } from "@phosphor-icons/react";
-import { At } from "@phosphor-icons/react";
-import { SignIn } from "@phosphor-icons/react";
-import { useState } from "react";
-
-import { Link } from "react-router-dom";
 import "../../css/Navbar.css";
-
-import { houseBeforeHover } from "./beforeHover_icons/houseBeforeHover.png";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
     // const [isHouseHovering, setOnHouseHovering] = useState(false);
@@ -115,7 +107,7 @@ export default function Navbar() {
             </button>
 
             <button className="cart-btn">
-                <Link to="cart">
+                <Link to="order">
                     <img
                         src={require("./beforeHover_icons/cartBeforeHover.png")}
                         alt="cartBeforeHover"
@@ -142,16 +134,16 @@ export default function Navbar() {
                 </Link>
             </button>
 
-            <button className="at-btn">
-                <Link to="at">
+            <button className="socials-btn">
+                <Link to="socials">
                     <img
-                        src={require("./beforeHover_icons/atBeforeHover.png")}
-                        alt="atBeforeHover"
+                        src={require("./beforeHover_icons/socialsBeforeHover.png")}
+                        alt="socialsBeforeHover"
                     />
                     <img
-                        className="at-btn-hover"
-                        src={require("./onHover_icons/atOnHover.png")}
-                        alt="at-btn-hover"
+                        className="socials-btn-hover"
+                        src={require("./onHover_icons/socialsOnHover.png")}
+                        alt="socials-btn-hover"
                     />
                 </Link>
             </button>

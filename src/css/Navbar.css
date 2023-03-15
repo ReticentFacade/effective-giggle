@@ -133,20 +133,20 @@ button img{
 }
 
 
-/* At-icon */
+/* Socials-icon */
 
-.at-btn {
+.socials-btn {
   position: relative;
 }
 
-.at-btn:hover .at-btn-hover {
+.socials-btn:hover .socials-btn-hover {
   visibility: visible;
 }
 
-.at-btn:hover img:first-child {
+.socials-btn:hover img:first-child {
   opacity: 0;
 }
-.at-btn .at-btn-hover {
+.socials-btn .socials-btn-hover {
   background: rgb(61,43,33);
   position: absolute;
   top: 0;
