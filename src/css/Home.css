@@ -1,46 +1,71 @@
-.container {
-    margin: 20px 80px 20px 5px;
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    position: absolute;
-}
-
-.coffee-bean-bag {
-    width: 50%;
-    height: 50%;
-    transform: rotate(-2deg);
-}
+/* .container{ */
+    /* required for home-text class */
+    /* position: relative;  */
+/* } */
 
 .coffee-bean-bag img {
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(20px 20px 25px #555);
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    box-sizing: border-box;
     position: relative;
+    -webkit-transform: rotate(-4deg);
+    filter: drop-shadow(20px 20px 25px #555);
 }
 
-.sub-container div {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-content: center;
-    height: 50%;
+.image-container{
+    /* object-position: center; */
+    display: table-row;
 }
 
-.text-container {
-    margin-bottom: 0px;
+/* ################################ */
+.mantine-zmc0ul::before {
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    left: 0rem;
+    bottom: 0rem;
+    content: "";
+    background: transparent;
+    z-index: 10;
+}
+.mantine-zmc0ul::after {
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    left: 0rem;
+    bottom: 0rem;
+    content: "";
+    background: transparent;
+    /* -webkit-animation: none; */
+    /* z-index: 11; */
+}
+/* ################################ */
+
+/* .text-container{
+    position: relative;
+} */
+
+.sub-container{
     display: flex;
-    align-items: bottom;
+    flex-shrink: 1;
+}
+.home-text {
+/* .text-container{ */
+    height: 20px;
+    /* position: absolute; */
+    margin-top: 50px;
+    padding-inline: 50px;
+    padding-left: 50px;
+    text-align: -webkit-auto;
+
+    bottom: 0;
     font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    /* margin-bottom: 50px; */
+    font-weight: bolder;
 }
 
 .button-container {
-    /* margin-top: 80px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,12 +73,23 @@
 
 .order-now {
     color: rgb(61, 43, 33);
+    padding: 15px;
     background: rgb(229, 229, 203);
-    padding: 10px 80px;
+    width: 55%;
+    font-size: 20px;
     transition: all 0.3s ease;
 }
 .order-now:hover {
     transform: translate(0px, 5px) !important;
     -webkit-transform: translate(0px, 5px) !important;
     box-shadow: 0px 1px 0px 0px !important;
+}
+
+.button-club{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+.button-club img{
+    padding-right: 50px;
 }

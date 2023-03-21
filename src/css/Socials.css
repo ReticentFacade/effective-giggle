@@ -1,0 +1,103 @@
+.discord2-icon{
+    width: 50px;
+    height: 80px;
+    border-radius: 25px 50% 50% 25px / 50% 50% 50% 50%;
+    transform: skew(-20deg);
+    background-color: #D2691E;
+    position: relative;
+}
+.discord2-icon:hover .discord-icon-hover{
+    visibility: visible;
+}
+.discord2-icon:hover img:first-child{
+    opacity: 0;
+}
+.discord2-icon .discord-icon-hover{
+    background: blue;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+/* Discord-icon: */
+.discord-icon{
+    position: relative;
+}
+.discord-icon:hover .discord-icon-hover{
+    visibility: visible;
+}
+.discord-icon:hover img:first-child{
+    opacity: 0;
+}
+.discord-icon .discord-icon-hover{
+    background: rgb(61,43,33);
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+/* Instagram-icon: */
+.instagram-icon{
+    position: relative;
+}
+.instagram-icon:hover .instagram-icon-hover{
+    visibility: visible;
+}
+.instagram-icon:hover img:first-child{
+    opacity: 0;
+}
+.instagram-icon .instagram-icon-hover{
+    background: rgb(61,43,33);
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+/* Meta-icon */
+.meta-icon{
+    position: relative;
+}
+.meta-icon:hover .meta-icon-hover{
+    visibility: visible;
+}
+.meta-icon:hover img:first-child{
+    opacity: 0;
+}
+.meta-icon .meta-icon-hover{
+    background: rgb(61,43,33);
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+/* Twitter-icon */
+.twitter-icon{
+    position: relative;
+}
+.twitter-icon:hover .twitter-icon-hover{
+    visibility: visible;
+}
+.twitter-icon:hover img:first-child{
+    opacity: 0;
+}
+.twitter-icon .twitter-icon-hover{
+    background: rgb(61,43,33);
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
