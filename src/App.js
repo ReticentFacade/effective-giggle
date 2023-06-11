@@ -6,7 +6,6 @@ import About from "./pages/About";
 import Login from "./pages/Login";
 import Order from "./pages/Order";
 import Socials from "./pages/Socials";
-import GoogleLoginFunction from "./components/GoogleLogin";
 
 function App() {
   return (

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Image from "../assets/coffee-beans-with-jute-bag.png";
 import { ShoppingBag } from "@phosphor-icons/react";
 import "../css/Home.css";
+import BeanImage from "../assets/coffee-bean.png";
+import BeansImage from "../assets/coffee-beans.png";
 
 import {
     Container,
@@ -37,48 +39,81 @@ function LeadGrid() {
                     </Skeleton>
                 </div>
 
-                    <Grid gutter="md" className="sub-container">
-                        <div className="text-container">
-                            <Grid.Col span={6}>
-                                <Skeleton
-                                    height={SECONDARY_COL_HEIGHT}
-                                    radius="md"
-                                    animate={false}
-                                />
-                                <div className="home-text">
-                                    Get the best coffee beans
-                                    <br />
-                                    EVER! <br />
-                                </div>
-                            </Grid.Col>
-                            <Grid.Col span={6}>
-                                <Skeleton
-                                    height={SECONDARY_COL_HEIGHT}
-                                    radius="md"
-                                    animate={false}
-                                />
-                            </Grid.Col>
-                        </div>
-                        <Grid.Col>
+                <Grid gutter="md">
+                    <div className="sub-container">
+                        {/* TEXT:  */}
+                        <Grid.Col span={6}>
                             <Skeleton
                                 height={SECONDARY_COL_HEIGHT}
                                 radius="md"
                                 animate={false}
                             />
-                            <Link to="/order">
-                                <button className="order-now font-bold py-2 px-4 rounded-full">
-                                    <div className="button-club">
-                                        <ShoppingBag
-                                            size={32}
-                                            color="#3d2b21"
-                                            weight="fill"
-                                        />
-                                        Order Now!
-                                    </div>
-                                </button>
-                            </Link>
+                            <span className="home-text">
+                                <p>
+                                Get the perfect
+                                <br />
+                                <b>COFFEE BEANS</b> <br />
+                                for your coffee <br />
+                                </p>
+                                <p>
+                                straight from <b>farmers</b>
+                                </p>
+                            </span>
                         </Grid.Col>
-                    </Grid>
+
+                        <div className="bean-image-container">
+                            {/* BEAN PICTURES:  */}
+                            <Grid.Col span={6}>
+                                {/* BEAN - 1 */}
+                                <div className="coffee-bean-1">
+                                    <Skeleton
+                                        height={PRIMARY_COL_HEIGHT}
+                                        radius="md"
+                                        animate={false}
+                                    >
+                                        <img
+                                            src={BeanImage}
+                                            alt="coffee-bean-1"
+                                        />
+                                    </Skeleton>
+                                </div>
+
+                                {/* BEAN - 2  */}
+                                <div className="coffee-bean-2">
+                                    <Skeleton
+                                        className="bean-2-container"
+                                        height={PRIMARY_COL_HEIGHT}
+                                        radius="md"
+                                        animate={false}
+                                    >
+                                        <img src={BeanImage} alt="beans" />
+                                    </Skeleton>
+                                </div>
+                            </Grid.Col>
+                        </div>
+                    </div>
+
+                    {/* ORDER BUTTON */}
+                    <Grid.Col>
+                        <Skeleton
+                            height={SECONDARY_COL_HEIGHT}
+                            radius="md"
+                            animate={false}
+                        />
+                        <Link to="/order">
+                            <button className="order-now font-bold py-2 px-4 rounded-full">
+                                <div className="button-club">
+                                    <ShoppingBag
+                                        size={32}
+                                        color="#3d2b21"
+                                        weight="fill"
+                                    />
+                                    Order Now!
+                                </div>
+                            </button>
+                        </Link>
+                    </Grid.Col>
+                </Grid>
             </SimpleGrid>
         </Container>
     );

@@ -1,0 +1,23 @@
+To implement the cancellation of an order and remove the corresponding entry from the JSON file, you can follow these simple steps:
+
+    ☐ Add a new method, let's call it cancelOrder(), to the OrderDetails class. This method will handle the cancellation logic.
+    
+    Within the `cancelOrder()` method, you need to implement the following steps:
+    
+    ☐ a. Read the content of the JSON file into an array or object. You can use fs.readFileSync() and JSON.parse() for this.
+    
+    ☐ b. Find the specific order entry that you want to cancel. You can use array methods like find() or a loop to locate the order based on specific criteria such as order ID or any other unique identifier.
+    
+    ☐ c. Once you have found the order entry, remove it from the array.
+    
+    ☐ d. Serialize the updated array back into a JSON-formatted string using JSON.stringify().
+    
+    ☐ e. Write the updated JSON string back to the file using fs.writeFileSync().
+    
+
+    Decide whether you want to keep the cancelOrder() method within the same OrderDetails class or separate it into a different file.
+    
+        ☐ a. If the cancellation logic is closely related to the OrderDetails class and you want to keep it together, you can add the cancelOrder() method within the same class.
+    
+        ☐ b. If you prefer to modularize your code or if the cancellation logic becomes complex and warrants a separate file, you can create a separate JavaScript file specifically for cancellation functionality and export the necessary functions or classes from there.
+    

@@ -1,6 +1,8 @@
 function Order(){
     return(
-        <div className="page">Order</div>
+        <div className="page">
+            Order
+        </div>
     );
 };
 

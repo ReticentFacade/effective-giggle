@@ -38,7 +38,16 @@ button img{
 /* Login-icon */
 
 .login-btn {
+  height: 72px;
   position: relative;
+  transition: transform, background-color;
+  transition-timing-function: ease;
+  transition-duration: 400ms;
+}
+.login-btn:hover{
+  transform: translate(0px, 1px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
 }
 
 .login-btn:hover .login-btn-hover {
@@ -62,11 +71,24 @@ button img{
 /* House-icon: */
 
 .house-btn {
+  margin-top: 5px;
+  margin-bottom: 5px;
   position: relative;
+  transition: transform, background-color;
+  transition-timing-function: ease;
+  transition-duration: 400ms;
+}
+.house-btn:hover{
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
 }
 
 .house-btn:hover .house-btn-hover {
   visibility: visible;
+  transform: translate(0px, 2px);
+  -webkit-transform: translate(0px, 2px);
+  box-shadow: 0px 1px 0px 0px;
 }
 
 .house-btn:hover img:first-child {
@@ -87,7 +109,17 @@ button img{
 /* Cart-icon: */
 
 .cart-btn {
+  margin-top: 5px;
+  margin-bottom: 5px;
   position: relative;
+  transition: transform, background-color;
+  transition-timing-function: ease;
+  transition-duration: 400ms;
+}
+.cart-btn:hover{
+  transform: translate(0px, 2px);
+  -webkit-transform: translate(0px, 2px);
+  box-shadow: 0px 1px 0px 0px;
 }
 
 .cart-btn:hover .cart-btn-hover {
@@ -112,7 +144,17 @@ button img{
 /* About-icon: */
 
 .about-btn {
+  margin-top: 5px;
+  margin-bottom: 5px;
   position: relative;
+  transition: transform, background-color;
+  transition-timing-function: ease;
+  transition-duration: 400ms;
+}
+.about-btn:hover{
+  transform: translate(0px, 2px);
+  -webkit-transform: translate(0px, 2px);
+  box-shadow: 0px 1px 0px 0px;
 }
 
 .about-btn:hover .about-btn-hover {
@@ -136,7 +178,17 @@ button img{
 /* Socials-icon */
 
 .socials-btn {
+  margin-top: 5px;
+  margin-bottom: 5px;
   position: relative;
+  transition: transform, background-color;
+  transition-timing-function: ease;
+  transition-duration: 400ms;
+}
+.socials-btn:hover{
+  transform: translate(0px, 2px);
+  -webkit-transform: translate(0px, 2px);
+  box-shadow: 0px 1px 0px 0px;
 }
 
 .socials-btn:hover .socials-btn-hover {
