@@ -1,7 +1,9 @@
-function Cart(){
-    return(
-        <div className="page">Cart</div>
-    );
-};
+function Cart() {
+  return (
+    <div className="page">
+    
+    </div>
+  );
+}
 
 export default Cart;

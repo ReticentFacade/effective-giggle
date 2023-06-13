@@ -1,0 +1,54 @@
+*{
+    color: rgb(61, 43, 33);
+}
+.page{
+    display: flex;
+}
+.order-side{
+    border: 3px dotted green;
+    text-align: left;
+    padding: 1rem;
+    width: 30vw;
+    height: 90vh;
+}
+h1{
+    margin: 2rem 0 1.5rem 0;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+h2{
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.coffee-type, .coffee-amount{
+    margin: 0.2rem 0 2rem 0;
+    border: 2px solid black;
+}
+
+/* Delete this one below later */
+.coffee-amount{ 
+    border: 2px solid blue;
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+}
+label{
+    align-content: left;
+    padding-right: 2rem;
+    margin-left: 1rem;
+}
+input{
+    margin-left: 0.6rem;
+}
+
+
+
+
+.cart-animation{
+    border: 2px solid pink;
+    width: 50vw;
+    height: 90vh;
+}
