@@ -88,16 +88,19 @@ function Order() {
           </label>
         </form>
 
+        <h2>Delivery Address</h2>
         <form className="delivery-form">
-            <h2>Delivery Address</h2>
-            <label>
-            <input 
-                type="text"
-                name="delivery-address"
-                placeholder="123 Main Street"
-                />
-            </label>
+          <label>
+            <input
+              type="text"
+              name="delivery-address"
+              className="delivery-address"
+              placeholder="123 Main Street"
+            />
+          </label>
         </form>
+
+        <button className="place-order-btn">Place Order</button>
       </div>
       <div className="cart-animation"></div>
     </div>
