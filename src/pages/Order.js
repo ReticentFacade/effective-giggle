@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../css/Order.css";
+// import OrderDetails from "../handlers/Order";
 
 function Order() {
   const [selectedCoffeeType, setSelectedCoffeeType] = useState("");
@@ -12,6 +13,19 @@ function Order() {
     setSelectedCoffeeAmount(event.target.value);
   };
 
+//   const orderDetails = new OrderDetails("","","");
+//   const handlePlaceOrder = () => {
+//     const coffeeType = selectedCoffeeType;
+//     const coffeeAmount = selectedCoffeeAmount;
+//     const deliveryAddress = ""; // get the value from input field
+
+//     orderDetails.coffee_bean = coffeeType;
+//     orderDetails.amount = coffeeAmount;
+//     orderDetails.address = deliveryAddress;
+
+//     orderDetails.placeOrder();
+//   };
+  
   return (
     <div className="page">
       <div className="order-side">

@@ -24,8 +24,6 @@ class OrderDetails {
 
       return order_id;
 
-      // 2. Search for this number in database (i.e. json file as of now) if it's unique or not. Make a new function for searching order using orderNumber.
-      // 3. If not unique, try another number. If unique, keep it.
     } catch (err) {
       console.error("There was an error generating the order_id: ", err);
     }
