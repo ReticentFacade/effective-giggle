@@ -1,6 +1,7 @@
-const file = require("fs");
-const path = require("path");
-const { v4: uuidv4 } = require("uuid");
+import fs from 'fs';
+import path from 'path';
+
+import { v4 as uuidv4 } from "uuid";
 
 // For searchOrder (searchAndShowOrder actually):
 const readline = require("readline");
@@ -34,9 +35,9 @@ class OrderDetails {
     try {
       // Read the current content of the file:
       let orderList = [];
-      if (file.existsSync(filepath)) {
+      if (fs.existsSync(filepath)) {
         console.log("File exists!");
-        const fileContent = file.readFileSync(filepath, "utf-8");
+        const fileContent = fs.readFileSync(filepath, "utf-8");
         orderList = JSON.parse(fileContent);
       } else {
         console.log("File not found!");
@@ -57,7 +58,7 @@ class OrderDetails {
       // Serialize
       const updatedOrdersJSON = JSON.stringify(orderList);
       // Write the newOrder in the file:
-      file.writeFileSync(filepath, updatedOrdersJSON, "utf-8");
+      fs.writeFileSync(filepath, updatedOrdersJSON, "utf-8");
 
       console.log("Details of your order: ", newOrder);
       console.log("Order status: Successfully placed!");
@@ -75,7 +76,7 @@ class OrderDetails {
   }
   readOrdersFromFile() {
     const filePath = path.join(__dirname, "orders.json");
-    const fileContent = file.readFileSync(filePath, "utf-8");
+    const fileContent = fs.readFileSync(filePath, "utf-8");
     const orders = JSON.parse(fileContent);
     return orders;
   }
@@ -118,7 +119,7 @@ class OrderDetails {
 
         // Write the updated orders array back to the file:
         const filepath = path.join(__dirname, "orders.json");
-        file.writeFileSync(filepath, updatedOrdersJSON, "utf-8");
+        fs.writeFileSync(filepath, updatedOrdersJSON, "utf-8");
 
         console.log("\nOrder successfully cancelled! \n");
         console.log("Details of the cancelled order: ", removedOrder);

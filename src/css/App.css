@@ -1,15 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root{
   background: #E4BC85;
   color: rgb(60,42,33);
 }
-
-
-
-
-
-
-
-
 
 .App {
   text-align: center;
