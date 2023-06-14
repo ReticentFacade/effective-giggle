@@ -1,31 +1,34 @@
 import React, { useState } from "react";
 import "../css/Order.css";
 // import OrderDetails from "../handlers/Order";
+// import { placeOrder } from "../handlers/Order";
 
 function Order() {
-  const [selectedCoffeeType, setSelectedCoffeeType] = useState("");
+  const [coffeeType, setCoffeeType] = useState("");
+  const [coffeeAmount, setCoffeeAmount] = useState("");
+  const [deliveryAddress, setDeliveryAddress] = useState("");
+
   const handleCoffeeTypeChange = (event) => {
-    setSelectedCoffeeType(event.target.value); // Update the selected coffee type when a radio button is clicked
+    setCoffeeType(event.target.value);
   };
-
-  const [selectedCoffeeAmount, setSelectedCoffeeAmount] = useState("");
   const handleCoffeeAmountChange = (event) => {
-    setSelectedCoffeeAmount(event.target.value);
+    setCoffeeAmount(event.target.value);
+  };
+  const handleDeliveryAddressChange = (event) => {
+    setDeliveryAddress(event.target.value);
+  };
+  const handlePlaceOrder = () => {
+    // Create an object with the user input data:
+    const orderData = {
+      coffeeType,
+      coffeeAmount,
+      deliveryAddress,
+    };
+
+    // Call the handler function in Order.js from handler-directory and just pass the orderData:
+    placeOrder(orderData);
   };
 
-//   const orderDetails = new OrderDetails("","","");
-//   const handlePlaceOrder = () => {
-//     const coffeeType = selectedCoffeeType;
-//     const coffeeAmount = selectedCoffeeAmount;
-//     const deliveryAddress = ""; // get the value from input field
-
-//     orderDetails.coffee_bean = coffeeType;
-//     orderDetails.amount = coffeeAmount;
-//     orderDetails.address = deliveryAddress;
-
-//     orderDetails.placeOrder();
-//   };
-  
   return (
     <div className="page">
       <div className="order-side">
@@ -39,7 +42,7 @@ function Order() {
               type="radio"
               name="coffee-type"
               value="Arabica"
-              checked={selectedCoffeeType === "Arabica"}
+              checked={coffeeType === "Arabica"}
               onChange={handleCoffeeTypeChange}
             />
           </label>
@@ -50,7 +53,7 @@ function Order() {
               type="radio"
               name="coffee-type"
               value="Robusta"
-              checked={selectedCoffeeType === "Robusta"}
+              checked={coffeeType === "Robusta"}
               onChange={handleCoffeeTypeChange}
             />
           </label>
@@ -61,7 +64,7 @@ function Order() {
               type="radio"
               name="coffee-type"
               value="Liberica"
-              checked={selectedCoffeeType === "Liberica"}
+              checked={coffeeType === "Liberica"}
               onChange={handleCoffeeTypeChange}
             />
           </label>
@@ -76,7 +79,7 @@ function Order() {
               type="radio"
               name="coffee-amount"
               value="5 kg"
-              checked={selectedCoffeeAmount === "5 kg"}
+              checked={coffeeAmount === "5 kg"}
               onChange={handleCoffeeAmountChange}
             />
           </label>
@@ -86,7 +89,7 @@ function Order() {
               type="radio"
               name="coffee-amount"
               value="15 kg"
-              checked={selectedCoffeeAmount === "15 kg"}
+              checked={coffeeAmount === "15 kg"}
               onChange={handleCoffeeAmountChange}
             />
           </label>
@@ -96,7 +99,7 @@ function Order() {
               type="radio"
               name="coffee-amount"
               value="30 kg"
-              checked={selectedCoffeeAmount === "30 kg"}
+              checked={coffeeAmount === "30 kg"}
               onChange={handleCoffeeAmountChange}
             />
           </label>
@@ -108,13 +111,17 @@ function Order() {
             <input
               type="text"
               name="delivery-address"
+              value={deliveryAddress}
               className="delivery-address"
               placeholder="123 Main Street"
+              onChange={handleDeliveryAddressChange}
             />
           </label>
         </form>
 
-        <button className="place-order-btn">Place Order</button>
+        <button className="place-order-btn" onClick={handlePlaceOrder}>
+          Place Order
+        </button>
       </div>
       <div className="cart-animation"></div>
     </div>
