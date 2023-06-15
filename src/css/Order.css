@@ -5,12 +5,11 @@
   display: flex;
 }
 .order-side {
-  /* border: 3px dotted green; */
   text-align: left;
   padding: 1rem;
   width: 30vw;
   height: 100vh;
-  border: 1px solid purple;
+  /* border: 1px solid purple; */
 }
 h1 {
   margin: 2rem 0 1.5rem 1rem;
@@ -25,13 +24,7 @@ h2 {
 .coffee-type,
 .coffee-amount {
   margin: 0.2rem 0 2rem 0;
-  /* border: 2px solid black; */
 }
-
-/* Delete this one below later */
-/* .coffee-amount{ 
-    border: 2px solid blue;
-} */
 
 form {
   display: flex;
@@ -57,13 +50,12 @@ input {
 }
 
 /* For btn */
-.place-order-btn {
+/* .place-order-btn {
   margin: 1rem;
   width: 25vw;
   height: 6vh;
   border-radius: 0.5rem;
   background: #e5e5cb;
-  /* position: relative; */
   overflow: hidden;
   transition: background-color 0.3s;
   border: 2px solid green;
@@ -71,7 +63,6 @@ input {
 
 .place-order-btn::before {
   content: "";
-  /* position: absolute; */
   top: 0;
   left: -100%;
   width: 100%;
@@ -82,7 +73,7 @@ input {
 
 .place-order-btn:hover::before {
   transform: translateX(100%);
-}
+} */
 
 /* ----------------------- */
 

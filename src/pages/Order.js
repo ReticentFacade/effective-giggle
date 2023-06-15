@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../css/Order.css";
+import "../css/btnEffect.css";
 // import OrderDetails from "../handlers/Order";
 // import { placeOrder } from "../handlers/Order";
 
@@ -119,7 +120,7 @@ function Order() {
           </label>
         </form>
 
-        <button className="place-order-btn" onClick={handlePlaceOrder}>
+        <button className="btn place-order-btn" onClick={handlePlaceOrder}>
           Place Order
         </button>
       </div>
