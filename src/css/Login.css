@@ -1,18 +1,39 @@
-/* button{
-    background: transparent;
-    border: none;
-} */
-
-.login-page{
-    margin-top: 30px;
-    padding: 30px;
-    width: 100vw;
+.user-details-form{
+    padding: 2em;
+    color: var(--darkBrown);
+    width: 50vw;
+    height: 25vh;
+    
     display: flex;
-    align-items: center;
-    /* justify-content: space-around; */
+    flex-direction: column !important;
 }
 
-.login-text{
-    font-size: 30px;
-    padding: 30px;
+.user-details-div{
+    padding: 1rem;
+    text-align: center;
+    margin: 0 1em 0 0;
+}
+
+.user-details-label{
+    font-size: 1.2em;
+}
+
+.user-details-input{
+    background: var(--lighterBg);
+    padding: 1em;
+    width: 9em;
+    height: 1.5em;
+    border: 2px solid var(--darkBrown);
+    border-radius: 1em;
+}
+
+.login-auth-btn{
+    padding: 1rem !important;
+    width: 15rem !important; 
+    border: 2px solid var(--darkBrown);
+}
+
+.invalid-details{
+    color: red;
+    font-size: 0.8em;
 }
