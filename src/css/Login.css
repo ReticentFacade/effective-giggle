@@ -28,8 +28,6 @@
 }
 
 .login-auth-btn{
-    padding: 1rem !important;
-    width: 15rem !important; 
     border: 2px solid var(--darkBrown);
 }
 
