@@ -1,13 +1,28 @@
-import { useRef, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import AuthService from "./AuthServices/authServices.js";
 import "../../css/Login.css";
 
 function Register() {
-  const usernameInput = useRef();
+  // const usernameInput = useRef();
 
-  useEffect(() => {
-    usernameInput.current.focus();
-  }, []);
+  // useEffect(() => {
+  //   usernameInput.current.focus();
+  // }, []);
+
+  const [ username, setUsername ] = useState("");
+  const [ password, setPassword ] = useState("");
+
+  const onChangeUsername = (e) => {
+    const username  = e.target.value;
+    setUsername(username);
+    console.log(setUsername);
+  };
+
+  const onChangePassword = (e) => {
+    const password = e.target.value;
+    setPassword(password);
+    console.log(setPassword);
+  };
 
   const required = (value) => {
     if (!value) {
@@ -27,7 +42,10 @@ function Register() {
             type="text"
             id="username"
             className="user-details-input"
-            ref={usernameInput}
+            name="username"
+            value={username}
+            // ref={usernameInput}
+            onChange={onChangeUsername}
             validations={{required}}
           />
         </div>
@@ -39,7 +57,10 @@ function Register() {
             type="password"
             id="password"
             className="user-details-input"
+            name="password"
+            value={password}
             placeholder="   *******"
+            onChange={onChangePassword}
             validations={{required}}
           />
         </div>

@@ -28,7 +28,7 @@ function Login() {
             id="username"
             className="user-details-input"
             ref={usernameInput}
-            validations={{required}}
+            validations={{ required }}
           />
         </div>
         <div className="user-details-div">
@@ -40,7 +40,7 @@ function Login() {
             id="password"
             className="user-details-input"
             placeholder="   *******"
-            validations={{required}}
+            validations={{ required }}
           />
         </div>
       </form>
