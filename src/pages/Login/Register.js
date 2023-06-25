@@ -1,27 +1,31 @@
-import { useRef, useState, useEffect } from "react";
-import AuthService from "./AuthServices/authServices.js";
+import { useState } from "react";
+// import AuthService from "./AuthServices/authServices.js";
 import "../../css/Login.css";
+import AuthService from "./Auth/auth.js";
 
 function Register() {
-  // const usernameInput = useRef();
-
-  // useEffect(() => {
-  //   usernameInput.current.focus();
-  // }, []);
-
   const [ username, setUsername ] = useState("");
   const [ password, setPassword ] = useState("");
 
   const onChangeUsername = (e) => {
     const username  = e.target.value;
     setUsername(username);
-    console.log(setUsername);
   };
 
   const onChangePassword = (e) => {
     const password = e.target.value;
     setPassword(password);
-    console.log(setPassword);
+  };
+  
+  const handleRegister = (e) => {
+    const userData = {
+      "username": username,
+      "password": password
+    };
+    console.log("Registering user...");
+    const jsonObject = JSON.parse(JSON.stringify(userData));
+    console.log(jsonObject);
+    // console.log(userData);
   };
 
   const required = (value) => {
@@ -30,10 +34,40 @@ function Register() {
     }
   };
 
+  AuthService.register(username, password).then(() => {
+    console.log("You have registered successfully!");
+  },
+  (err) => {
+    console.error(err);
+  });
+
+  // const form = document.querySelector('.user-details-form');
+  // form.addEventListener('submit', (e) => {
+  //   event.preventDefault();
+
+  //   const username = document.querySelector('.username-input').value;
+  //   const password = document.querySelector('.password-input').value;
+
+  //   try{
+  //     // Sending axios post req to backend route
+  //     const response = axios.post('/api/user-registered', userData);
+
+  //     // Handle response from backend
+  //     console.log(response.data);
+
+  //     // If successful registration, redirect to login page
+  //     if(response.data === "User registered successfully!"){
+  //       window.location.replace("/login");
+  //     }
+  //   } catch(err){
+  //     console.error(err);
+  //   }
+  // });
+
   return (
     <div className="user-details">
       <h1>Register here:</h1>
-      <form className="user-details-form">
+      <form className="user-details-form" onSubmit={handleRegister}>
         <div className="user-details-div">
           <label htmlFor="username" className="user-details-label">
             Username:{" "}
@@ -44,7 +78,6 @@ function Register() {
             className="user-details-input"
             name="username"
             value={username}
-            // ref={usernameInput}
             onChange={onChangeUsername}
             validations={{required}}
           />
@@ -68,7 +101,12 @@ function Register() {
 
       <br />
       <br />
-      <button className="btn place-order-btn login-auth-btn">Register</button>
+      <button 
+        className="btn place-order-btn login-auth-btn"
+        type="submit"
+        onClick={handleRegister}>
+          Register
+      </button>
     </div>
   );
 }
