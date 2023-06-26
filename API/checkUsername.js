@@ -1,8 +1,4 @@
-import fs from "fs";
-import path from "path";
-
-import { getDirName } from "./libs/helper.js";
-const __dirname = getDirName(import.meta.url);
+import { readUsernames } from "./libs/helper.js";
 
 const checkUsername = (username) => {
   const validFormat = /^[a-zA-Z0-9_-]{3,20}$/;
@@ -19,9 +15,20 @@ const getUsernameRules = () => {
   ];
 };
 
+const isUsernameTaken = async (username) => {
+  try {
+    const usernames = await readUsernames();
+    return usernames.some((user) => user.username === username);
+  } catch (error) {
+    console.error("Error checking if username is taken:", error);
+    return false;
+  }
+};
+
 const UserName = {
   checkUsername,
   getUsernameRules,
+  isUsernameTaken,
 };
 
 export default UserName;

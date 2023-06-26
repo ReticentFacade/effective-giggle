@@ -4,7 +4,6 @@
 ✔ do not store data (username, password) if username already exists @done (25/06/2023, 15:53:46)
 
 ☐ access only the passwords that are on same index as username
-☐ every username should be unique
 
 ☐ after that try logging into some 2 - 3 accounts randomly (with correct username passowrd, with correct username and incorrect password)
 
