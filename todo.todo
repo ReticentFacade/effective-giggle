@@ -3,7 +3,7 @@
 ✔ sanitize user input and check if username already exists or not @done (25/06/2023, 15:53:45)
 ✔ do not store data (username, password) if username already exists @done (25/06/2023, 15:53:46)
 
-☐ access only the passwords that are on same index as username
+✔ access only the passwords that are on same index as username @done (27/06/2023, 16:25:24)
 
 ☐ after that try logging into some 2 - 3 accounts randomly (with correct username passowrd, with correct username and incorrect password)
 

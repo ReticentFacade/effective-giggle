@@ -1,7 +1,12 @@
-import Router from "express";
+import { Router } from "express";
+import { router as apiRoutes } from "./handler/index.js";
 
-const regRoutes = require("./register");
+const router = Router();
 
-Router.use("/register", regRoutes);
+router.use("/api", apiRoutes);
 
-module.exports = Router;
+router.use((req, res) => {
+  res.send("<h1>Wrong Route!</h1>");
+});
+
+export { router };
