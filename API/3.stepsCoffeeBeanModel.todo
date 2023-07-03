@@ -1,0 +1,8 @@
+✔ Route req? @done (02/07/2023, 18:37:22) 
+    
+✔ Create model CoffeeBean.js @done (02/07/2023, 19:23:43)
+    ✔ validateRequest ----- WHERE THOUGH :( @done (02/07/2023, 19:23:34)
+        - Doing it in the controller for now 
+
+☐ Check routes
+    ☐ POST /coffeebean
