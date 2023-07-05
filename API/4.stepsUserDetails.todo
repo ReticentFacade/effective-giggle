@@ -1,0 +1,7 @@
+☐ Routes
+
+☐ Model: 
+    ☐ userId = FK for orders
+    ☐ coffeeBeanId/productId = FK for orders
+
+Declare all these relations in index.js of model-folder

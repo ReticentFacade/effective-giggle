@@ -1,16 +1,16 @@
-import { Model, DataTypes } from "sequelize";
-import sequelize from "sequelize";
+import { Sequelize, Model, DataTypes } from "sequelize";
+import sequelize from '../config/connection.js';
 
 class CoffeeBean extends Model {}
 
 CoffeeBean.init(
   {
     type: {
-      type: DataTypes.ENUM("Arabica", "Robusta", "Liberica"),
+      type: DataTypes.STRING,
       allowNull: false,
     },
     amount: {
-      type: DataTypes.ENUM("5kg", "15kg", "30kg"),
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   },
