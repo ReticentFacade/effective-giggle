@@ -4,7 +4,7 @@
     ✔ getOrder function // ????????? @done (05/07/2023, 00:42:37)
     ✔ placeOrder function -----> uses cartController.getCart function @done (05/07/2023, 00:42:38)
     ☐ updateOrder function // ????????
-    ☐ deleteOrder function 
+    ✔ deleteOrder function @done (05/07/2023, 11:13:57)
     
 ✔ Order.js Model @done (05/07/2023, 00:42:33)
 
