@@ -1,4 +1,4 @@
-# To-do: 
+# To-do:
 - [x] routes:
     - [x] /api/auth
     - [x] /api/products 
