@@ -19,6 +19,10 @@ Cart.init(
     //   type: DataTypes.STRING,
     //   allowNull: false,
     // },
+    beanPrice: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+    },
   },
   {
     sequelize,

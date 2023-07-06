@@ -2,15 +2,15 @@ import sequelize from "../config/connection.js";
 import { Model, DataTypes } from "sequelize";
 
 class Order extends Model {
-  getTotalAmount() {
-    const orderItems = this.orderItems; // assuming orderItems is an array of order items
-    let totalAmount = 0;
-    if (orderItems && orderItems.length > 0) {
-      totalAmount = orderItems.reduce((acc, item) => acc + item.price, 0);
-    }
-    return totalAmount;
-  }
-}
+  // getTotalAmount() {
+  //   const orderItems = this.orderItems; // assuming orderItems is an array of order items
+  //   let totalAmount = 0;
+  //   if (orderItems && orderItems.length > 0) {
+  //     totalAmount = orderItems.reduce((acc, item) => acc + item.price, 0);
+  //   }
+  //   return totalAmount;
+  // }
+};
 
 Order.init(
   {

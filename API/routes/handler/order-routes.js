@@ -3,8 +3,9 @@ import orderController from "../../controllers/orderController.js";
 
 const orderRouter = new Router();
 
-orderRouter.get("/orders", orderController.getOrder);
-orderRouter.post("/orders", orderController.placeOrder);
+orderRouter.get("/getOrder", orderController.getOrder);
+
+orderRouter.post("/postOrder", orderController.placeOrder);
 // -----
 // One controller to send it to the seller??
 // -----

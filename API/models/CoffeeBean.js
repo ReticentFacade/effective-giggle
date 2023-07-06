@@ -1,5 +1,5 @@
 import { Sequelize, Model, DataTypes } from "sequelize";
-import sequelize from '../config/connection.js';
+import sequelize from "../config/connection.js";
 
 class CoffeeBean extends Model {}
 
@@ -10,6 +10,10 @@ CoffeeBean.init(
       allowNull: false,
     },
     amount: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    price: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
