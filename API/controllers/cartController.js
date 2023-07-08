@@ -1,6 +1,7 @@
 import { LocalStorage } from "node-localstorage";
 import coffeeBeanController from "./coffeeBeanController.js";
 import orderController from "./orderController.js";
+import { calculateBeanPrice } from "./helpers/calculations.js";
 // import UserDetails from "../models/UserDetails.js";
 
 // Just to check if localStorage's working or not, using curl. Delete later.
@@ -8,7 +9,7 @@ const localStorage = new LocalStorage("./scratch");
 
 const addToCart = async (req, res) => {
   try {
-    const { beanType, beanAmount, beanPrice } = req.body;
+    let { beanType, beanAmount } = req.body;
     coffeeBeanController.validateCoffeeBeans(beanType, beanAmount, res);
 
     // Checking existing localStorage:
@@ -21,11 +22,21 @@ const addToCart = async (req, res) => {
     else {
       cartData = JSON.parse(cartData);
     }
+
+    /**
+     * for items in beanType [Array]
+     * add all the amounts
+     * 3 (5, 10, 15) -> 50, 125, 175
+     */
+    
+    let beanPrice = calculateBeanPrice(beanType, beanAmount);
     let cart = {
       beanType,
       beanAmount,
       beanPrice,
     };
+    console.log(cart);
+
     cartData.push(cart);
     // Add it to localStorage:
     localStorage.setItem("cart", JSON.stringify(cartData));

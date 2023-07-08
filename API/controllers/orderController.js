@@ -1,18 +1,15 @@
 import Order from "../models/Order.js";
+import { calculateTotalAmount } from "./helpers/calculations.js";
 
-const calculateTotalAmount = (cartEntries) => {
-  let totalAmount = 0;
-
-  for (const cartEntry of cartEntries) {
-    totalAmount += cartEntry.beanPrice;
-  }
-
-  return totalAmount;
-};
+/**
+ * 1. local storage (data) -> parsed console.log
+ *     - [username ([beanType] [beanAmount] [beanPrice])] (generate price dynamically from beanAmount)
+ * 2. username + beanType1 + beanAmount1 + beanPrice1
+ * 3. use data to create order in DB
+ */
 
 const createOrder = async (cartEntries) => {
   try {
-    
     const order = await Order.create({
       orderItems: cartEntries,
       totalAmount: calculateTotalAmount(cartEntries),
@@ -28,6 +25,7 @@ const createOrder = async (cartEntries) => {
   }
 };
 
+// create a secondary file to test this.
 const placeOrder = async (req, res) => {
   try {
     // const { orderId, orderItems, totalAmount } = req.body;

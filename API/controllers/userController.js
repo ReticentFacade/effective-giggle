@@ -1,5 +1,3 @@
-// Contains 2 funcs: signUp & login
-
 // // TODO: USE BCRYPT TO HASH PASSWORDS
 
 import jwt from "jsonwebtoken";
@@ -7,6 +5,12 @@ import bcrypt from "bcrypt";
 import User from "../models/User.js";
 import dotenv from "dotenv";
 dotenv.config();
+
+/**
+ *    - trim email address to generate a username
+ *    - use that username as primary key
+ *    - store data based on that username
+ */
 
 const signUp = async (req, res) => {
   try {

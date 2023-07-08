@@ -14,7 +14,7 @@
 
 - [ ] Verify auth 
     - [ ] frontend
-    - [ ] backend: check & login using 2/3 accounts
+    - [x] backend: check & login using 2/3 accounts
 
 - [ ] OTP generation & verification
     - [ ] frontend
