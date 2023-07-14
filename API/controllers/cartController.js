@@ -1,6 +1,7 @@
 import { LocalStorage } from "node-localstorage";
 import coffeeBeanController from "./coffeeBeanController.js";
 import orderController from "./orderController.js";
+import userDetailsController from "./userDetailsController.js";
 import { calculateBeanPrice } from "./helpers/calculations.js";
 // import UserDetails from "../models/UserDetails.js";
 
@@ -28,7 +29,7 @@ const addToCart = async (req, res) => {
      * add all the amounts
      * 3 (5, 10, 15) -> 50, 125, 175
      */
-    
+
     let beanPrice = calculateBeanPrice(beanType, beanAmount);
     let cart = {
       beanType,
@@ -41,6 +42,7 @@ const addToCart = async (req, res) => {
     // Add it to localStorage:
     localStorage.setItem("cart", JSON.stringify(cartData));
 
+    console.log("Cart: ", cartData);
     res.status(200).json({ message: "Successfully added to cart!" });
   } catch (err) {
     console.log(err);
@@ -74,13 +76,16 @@ const checkout = async (req, res) => {
     }
 
     const cartEntries = JSON.parse(cartData);
+
     // Call orderController to create an order:
-    await orderController.createOrder(cartEntries);
+    await orderController.createOrder(cartEntries, req);
+    // await orderController.createOrder(cartEntries, res);
     console.log("Order created successfully! ^.^");
 
     localStorage.removeItem("cart");
 
-    res.status(200).json({ message: "Successfully checked out!" });
+    console.log("Cart cleared successfully!");
+    // res.status(200).json({ message: "Successfully checked out!" });
   } catch (err) {
     console.log(err);
     res.status(500).json({ message: "Unable to checkout!" });

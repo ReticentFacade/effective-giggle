@@ -1,4 +1,6 @@
 import Order from "../models/Order.js";
+// import User from "../models/User.js";
+import userDetailsController from "../controllers/userDetailsController.js";
 import { calculateTotalAmount } from "./helpers/calculations.js";
 
 /**
@@ -8,10 +10,13 @@ import { calculateTotalAmount } from "./helpers/calculations.js";
  * 3. use data to create order in DB
  */
 
-const createOrder = async (cartEntries) => {
+const createOrder = async (cartEntries, req, res) => {
   try {
+    const username = await userDetailsController.getUsername(req);
+    console.log("Username exists: ", username);
     const order = await Order.create({
       orderItems: cartEntries,
+      username: username,
       totalAmount: calculateTotalAmount(cartEntries),
     });
 
@@ -31,7 +36,7 @@ const placeOrder = async (req, res) => {
     // const { orderId, orderItems, totalAmount } = req.body;
 
     // Use createOrder to create a new order-
-    const order = await createOrder(orderItems);
+    const order = await createOrder(orderItems, req, res);
 
     console.log("Your order details: ", order);
     res.status(200).json({ message: "Order placed successfully!", order });

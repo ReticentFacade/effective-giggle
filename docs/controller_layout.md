@@ -3,19 +3,19 @@ Routes -> Controller -> config -> Models -> DB
 
 ## Controllers
 
-- Authentication:
+* Authentication:
   + signUp
-    * Username
-    * Email
-    * Password
+    - Username
+    - Email
+    - Password
   + login
-    * Username
-    * Password
+    - Username
+    - Password
 
-- Cart & Order:
+* Cart & Order:
     + `getCart` -> DB -> res [beanType, beanAmount, beanPrice]
     + client -> `addToCart` -> DB 
-    + client -> `checkout` -> `createOrder` & then `localStorage.remove("cart")`
-        * `getOrder` -> DB -> res (orderId, beanType, beanAmount, totalAmount)
-        * `placeOrder` -> `createOrder` -> DB 
-        * `deleteOrder` -> removes order from DB
+    + client -> `checkout` -> `create/placeOrder` & then `localStorage.remove("cart")`
+        - `getOrder` -> DB -> res (orderId, beanType, beanAmount, totalAmount)
+        - `placeOrder` -> `createOrder` -> DB 
+        - `deleteOrder` -> removes order from DB

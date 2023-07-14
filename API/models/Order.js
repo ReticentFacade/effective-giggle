@@ -1,7 +1,7 @@
 import sequelize from "../config/connection.js";
 import { Model, DataTypes } from "sequelize";
 
-class Order extends Model {};
+class Order extends Model {}
 
 Order.init(
   {
@@ -14,10 +14,6 @@ Order.init(
     username: {
       type: DataTypes.STRING,
       allowNull: false,
-      references: {
-        model: "User",
-        key: "username",
-      },
     },
     orderItems: {
       type: DataTypes.ARRAY(DataTypes.JSON),
@@ -36,5 +32,10 @@ Order.init(
     timestamps: false,
   }
 );
+
+// Order.belongsTo(User, {
+//   foreignKey: "username",
+//   targetKey: "username",
+// });
 
 export default Order;
