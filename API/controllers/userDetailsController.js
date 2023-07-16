@@ -1,47 +1,47 @@
+import jwt from "jsonwebtoken";
 import User from "../models/User.js";
 import UserDetails from "../models/UserDetails.js";
+import { checkIfUsernameExists } from "../middleware/checkIfUsernameExists.js";
+import dotenv from "dotenv";
+import grabToken from "./helpers/grabToken.js";
 
-const checkIfUsernameExists = async (req) => {
-  try {
-    const { username } = req.body;
-    // First find if a user with that username exists in the DB
-    const user = await User.findOne({
-      where: {
-        username: username,
-      },
-    });
-    // If it exists, then return the username else return null
-    if (user) {
-      console.log(`User ${username} exists!`);
-    } else if (!user) {
-      console.log(`User ${username} does not exist ^.^`);
-    }
-    return user ? user.username : null;
-  } catch (err) {
-    console.error(err.message);
-    return false;
-  }
-};
+dotenv.config();
 
-const getUsername = async (req) => {
+const getUsername = async (res) => {
   try {
-    const { username } = req.body;
-    const usernameExists = await checkIfUsernameExists(req);
-    if (usernameExists) {
-      console.log("Fetching username...");
-      const user = await User.findOne({
-        where: {
-          username: username,
+    // const username = await grabToken();
+    // const user = await User.findByPk(username);
+
+    // if (user) {
+    //   return res.status(200).json({
+    //     authStatus: "User found",
+    //     message: "Username fetched successfully!",
+    //     username: username,
+    //   });
+    // } else {
+    //   return res.status(404).json({
+    //     authStatus: "User not found",
+    //     message: "User not found",
+    //   });
+    // }
+
+    const userId = grabToken();
+    if (userId) {
+      // Make an API call to get the user's details using the userId
+      const response = await fetch(`/api/userDetails/${userId}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
         },
       });
-      console.log(
-        "Here's your username: ",
-        JSON.stringify(user.username, null, 2)
-      );
-      return user.username;
+      const data = await response.json();
+      if (data.authStatus === "User found") {
+        const username = data.username;
+        return username;
+      }
     } else {
-      console.log("Please signUp first");
-      return null;
+        console.log("UserId not found!");
+        return null;
     }
   } catch (err) {
     console.error(err.message);
@@ -66,14 +66,14 @@ const addUserDetails = async (req, res) => {
         "User details added successfully",
         JSON.stringify(newUserDetails, null, 2)
       );
-      res.status(201).json({ message: "User details added successfully!" });
+      res.status(201).json({ message: "User details added successfully! 👌" });
     } else {
       console.log("Username doesn't exist");
       res.status(404).json({ message: "Please signUp first :)" });
     }
   } catch (err) {
     console.error(err.message);
-    res.status(500).json({ message: "User details cannot be added!😙" });
+    res.status(500).json({ message: "User details cannot be added! 😙" });
   }
 };
 
@@ -93,12 +93,10 @@ const getUserDetails = async (req, res) => {
         "Here are your details: ",
         JSON.stringify(userDetails.userAddress, null, 2)
       );
-      res
-        .status(200)
-        .json({
-          message: "User details fetched successfully!",
-          userAddress: userDetails.userAddress,
-        });
+      res.status(200).json({
+        message: "User details fetched successfully!",
+        userAddress: userDetails.userAddress,
+      });
     } else {
       console.log("Username doesn't exist");
       res.status(404).json({ message: "Please signUp to get details" });

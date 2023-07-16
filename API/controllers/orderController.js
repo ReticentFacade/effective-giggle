@@ -10,31 +10,32 @@ import { calculateTotalAmount } from "./helpers/calculations.js";
  * 3. use data to create order in DB
  */
 
-const createOrder = async (cartEntries, req, res) => {
+const createOrder = async (cartEntries, username, res) => {
   try {
-    const username = await userDetailsController.getUsername(req);
-    console.log("Username exists: ", username);
+    // const username = await userDetailsController.getUsername(req);
+    console.log("Username is: ", username);
+
     const order = await Order.create({
-      orderItems: cartEntries,
       username: username,
+      orderItems: cartEntries,
       totalAmount: calculateTotalAmount(cartEntries),
     });
 
     // const order = JSON.parse(cartEntries);
     console.log("Order created: ", order);
+    console.log();
     console.log("Order total: ", calculateTotalAmount(cartEntries));
     return order;
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "Unable to create the order!" });
+    // res.status(500).json({ message: "Unable to create the order!" });
+    throw err;
   }
 };
 
 // create a secondary file to test this.
 const placeOrder = async (req, res) => {
   try {
-    // const { orderId, orderItems, totalAmount } = req.body;
-
     // Use createOrder to create a new order-
     const order = await createOrder(orderItems, req, res);
 

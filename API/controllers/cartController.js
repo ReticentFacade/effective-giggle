@@ -69,6 +69,10 @@ const getCart = async (req, res) => {
 
 const checkout = async (req, res) => {
   try {
+    // // Get username:
+    // const username = await userDetailsController.getUsername(token);
+    // console.log("Username is: ", username);
+
     const cartData = localStorage.getItem("cart");
     if (!cartData) {
       res.status(400).json({ message: "Cart is empty!" });
@@ -77,9 +81,12 @@ const checkout = async (req, res) => {
 
     const cartEntries = JSON.parse(cartData);
 
+    // Access jwt token: 
+    const token = req.cookies.jwt;
+
     // Call orderController to create an order:
-    await orderController.createOrder(cartEntries, req);
-    // await orderController.createOrder(cartEntries, res);
+    // await orderController.createOrder(cartEntries, username);
+    await orderController.createOrder(cartEntries, token);
     console.log("Order created successfully! ^.^");
 
     localStorage.removeItem("cart");

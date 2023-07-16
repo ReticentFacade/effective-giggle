@@ -1,7 +1,8 @@
 // // TODO: USE BCRYPT TO HASH PASSWORDS
-
+import grabToken from "./helpers/grabToken.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
+import { LocalStorage } from "node-localstorage";
 import User from "../models/User.js";
 import dotenv from "dotenv";
 dotenv.config();
@@ -11,6 +12,9 @@ dotenv.config();
  *    - use that username as primary key
  *    - store data based on that username
  */
+
+const localStorage = new LocalStorage("./scratch");
+
 
 const signUp = async (req, res) => {
   try {
@@ -96,9 +100,14 @@ const login = async (req, res) => {
         );
         console.log();
         console.log("Token created successfully: ", token);
+        console.log();
+        // Set the token in localStorage: 
+        localStorage.setItem("jwt", token);
+        const userId = grabToken();
+        console.log("Token in localStorage and grabbed, returned userId", userId);
 
         return res.status(200).send({
-          authStatus: "user logged in",
+          authStatus: "user logged in 👌",
           message: {
             username: userData.username,
             email: userData.email,
@@ -122,7 +131,4 @@ const login = async (req, res) => {
   }
 };
 
-export { 
-    signUp, 
-    login 
-};
+export { signUp, login };
