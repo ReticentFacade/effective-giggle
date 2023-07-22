@@ -6,7 +6,11 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "sequelize": "sequelize",
+    "db:migrate": "sequelize db:migrate",
+    "db:seed:all": "sequelize db:seed:all",
+    "db:seed:undo:all": "sequelize db:seed:undo:all"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +22,7 @@
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "jsonwebtoken": "^9.0.0",
+    "morgan": "^1.10.0",
     "node-localstorage": "^2.2.1",
     "nodemon": "^2.0.22",
     "pg": "^8.11.1",

@@ -1,4 +1,4 @@
-import { Sequelize, Model, DataTypes } from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/connection.js';
 
 // public class fields of the same name as the model's attribute = causes errors
@@ -6,6 +6,11 @@ class User extends Model {}
 
 User.init ({
     // Define model attributes 
+    roleId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 2, // default roleID for normal users (not admins)
+    },
     username: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -18,6 +23,7 @@ User.init ({
         type: DataTypes.STRING,
         allowNull: false,
     },
+    
 }, {
     // Sequelize instance: 
     sequelize,

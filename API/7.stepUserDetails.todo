@@ -8,11 +8,11 @@
 
 ✔ create userDetails model @done (13/07/2023, 13:14:35)
 
-☐ club username with cartController's checkout
+✔ club username with cartController's checkout @done (19/07/2023, 21:02:14)
 
-☐ club username with the cartEntries in createOrder function 
+✔ club username with the cartEntries in createOrder function @done (19/07/2023, 21:02:16)
 
-☐ make sure placeOrder creates two rows in the order table if there are two cartEntries
+☐ // make sure placeOrder creates two rows in the order table if there are two cartEntries
 - [username ([beanType] [beanAmount] [beanPrice])] 
 
         

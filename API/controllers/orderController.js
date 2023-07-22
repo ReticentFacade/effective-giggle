@@ -10,10 +10,10 @@ import { calculateTotalAmount } from "./helpers/calculations.js";
  * 3. use data to create order in DB
  */
 
-const createOrder = async (cartEntries, username, res) => {
+const createOrder = async (cartEntries, res) => {
   try {
-    // const username = await userDetailsController.getUsername(req);
-    console.log("Username is: ", username);
+    const username = await userDetailsController.getUsername();
+    console.log("createOrder --> Username is: ", username);
 
     const order = await Order.create({
       username: username,

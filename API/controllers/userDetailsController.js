@@ -4,48 +4,27 @@ import UserDetails from "../models/UserDetails.js";
 import { checkIfUsernameExists } from "../middleware/checkIfUsernameExists.js";
 import dotenv from "dotenv";
 import grabToken from "./helpers/grabToken.js";
+// import { localStorage } from "./userController.js";
 
 dotenv.config();
 
-const getUsername = async (res) => {
+const getUsername = async () => {
+  // console.log("Started getUsername");
+  // const userId = grabToken();
+  // console.log("userId: ", userId);
+  // const user = await User.findByPk(userId);
+  // const username = user ? user.dataValues.username : null;
+  // console.log("Username: ", username);
+  // console.log("Ended getUsername");
   try {
-    // const username = await grabToken();
-    // const user = await User.findByPk(username);
-
-    // if (user) {
-    //   return res.status(200).json({
-    //     authStatus: "User found",
-    //     message: "Username fetched successfully!",
-    //     username: username,
-    //   });
-    // } else {
-    //   return res.status(404).json({
-    //     authStatus: "User not found",
-    //     message: "User not found",
-    //   });
-    // }
-
     const userId = grabToken();
-    if (userId) {
-      // Make an API call to get the user's details using the userId
-      const response = await fetch(`/api/userDetails/${userId}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const data = await response.json();
-      if (data.authStatus === "User found") {
-        const username = data.username;
-        return username;
-      }
-    } else {
-        console.log("UserId not found!");
-        return null;
-    }
+    const user = await User.findByPk(userId);
+    const username = user ? user.dataValues.username : null;
+    console.log("Username: ", username);
+    return username;
   } catch (err) {
     console.error(err.message);
-    res.status(500).json({ message: "Unable to fetch username!" });
+    return null;
   }
 };
 

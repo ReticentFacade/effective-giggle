@@ -1,5 +1,5 @@
 import { Model, DataTypes } from "sequelize";
-import sequelize from "sequelize";
+import sequelize from "../config/connection.js";
 import CoffeeBean from "./CoffeeBean.js";
 import UserDetails from "./UserDetails.js";
 

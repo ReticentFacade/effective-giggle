@@ -4,6 +4,8 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import { LocalStorage } from "node-localstorage";
 import User from "../models/User.js";
+import { checkAdmin } from "../middleware/checkAdmin.js";
+import Role from "../models/Role.js";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -14,7 +16,6 @@ dotenv.config();
  */
 
 const localStorage = new LocalStorage("./scratch");
-
 
 const signUp = async (req, res) => {
   try {
@@ -68,17 +69,29 @@ const signUp = async (req, res) => {
 
 const login = async (req, res) => {
   try {
+    console.log("Starting login function...");
     const userData = await User.findOne({
       // findOne = obtains the 1st entry/result it finds (that fulfills the query options, if any)
       where: {
         username: req.body.username,
       },
+      include: [
+        {
+          model: Role,
+        },
+      ],
     });
+    
+    console.log("Found user...", userData);
+    
     if (userData) {
+
+      console.log("Starting bcrypt comparison...");
       // after bcrypt, change it to: const isSame = await bcrypt.compare(req.body.password, userData.password);
       const isSame = await bcrypt.compare(req.body.password, userData.password);
 
       if (isSame) {
+        console.log("Bcrypt comparison successful!");
         let token = jwt.sign(
           {
             id: userData.id,
@@ -94,33 +107,49 @@ const login = async (req, res) => {
           httpOnly: true,
         });
 
-        console.log(
-          "User logged in successfully",
-          JSON.stringify(userData, null, 2)
-        );
-        console.log();
-        console.log("Token created successfully: ", token);
-        console.log();
-        // Set the token in localStorage: 
-        localStorage.setItem("jwt", token);
-        const userId = grabToken();
-        console.log("Token in localStorage and grabbed, returned userId", userId);
-
-        return res.status(200).send({
-          authStatus: "user logged in 👌",
-          message: {
-            username: userData.username,
-            email: userData.email,
-            hashedPass: userData.password,
-          },
-        });
+        // Check if user is an admin or not: 
+        if (userData.Role && userData.Role.name === "admin") {
+          console.log("Checking admin or not...");
+          // Handle admin login:
+          return res.redirect("/dashboard");
+        } else {
+          // Handle regular user login:
+          console.log(
+            "User logged in successfully",
+            JSON.stringify(userData, null, 2)
+          );
+          console.log();
+          console.log("Token created successfully: ", token);
+          console.log();
+          // Set the token in localStorage:
+          localStorage.setItem("jwt", token);
+          const userId = grabToken();
+          console.log(
+            "Token in localStorage and grabbed, returned userId",
+            userId
+          );
+  
+          return res.status(200).send({
+            authStatus: "user logged in 👌",
+            message: {
+              id: userData.id,
+              roleId: userData.roleId,
+              username: userData.username,
+              email: userData.email,
+              hashedPass: userData.password,
+            },
+          });
+        }
+        
       } else {
+        // Handle incorrect password: 
         return res.status(401).send({
           authStatus: "unable to login user",
           message: "Password is incorrect",
         });
       }
     } else {
+      // Handle invalid user details: 
       return res.status(401).send({
         authStatus: "unable to login user",
         message: "Invalid user details",
@@ -131,4 +160,4 @@ const login = async (req, res) => {
   }
 };
 
-export { signUp, login };
+export { signUp, login, localStorage };

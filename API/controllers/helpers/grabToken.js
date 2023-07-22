@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { LocalStorage } from "node-localstorage";
+import { localStorage } from "../userController.js";
 import dotenv from "dotenv";
 dotenv.config();
 
