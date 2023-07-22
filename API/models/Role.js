@@ -6,6 +6,11 @@ class Role extends Model {}
 
 Role.init(
   {
+    // roleId: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   defaultValue: 2, // default roleID for normal users (not admins)
+    // },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -30,6 +35,6 @@ Role.init(
 );
 
 // association from Role to User
-Role.hasMany(User, { foreignKey: "roleId" });
+// Role.hasMany(User, { foreignKey: "roleId" });
 
 export default Role;

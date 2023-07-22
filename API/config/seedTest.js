@@ -17,6 +17,8 @@ async function seedDatabase() {
     // await Product.bulkCreate(productData);
     // console.log("Products seeded successfully");
 
+    // --------------------------------------------------------------------------
+
     // await Product.destroy({
     // where: {id: "6"},
     // });
@@ -37,9 +39,9 @@ async function seedDatabase() {
 
     // --------------------------------------------------------------------------
 
-    console.log("Running the seeder to add admin user...");
-    createAdminUser();
-    console.log("Admin user created successfully.");
+    // console.log("Running the seeder to add admin user...");
+    // createAdminUser();
+    // console.log("Admin user created successfully.");
   } catch (err) {
     console.log("Unable to connect to the database: ", err);
     // process.exit(1); // Exit the process when the seeder is finished.

@@ -75,11 +75,11 @@ const login = async (req, res) => {
       where: {
         username: req.body.username,
       },
-      include: [
-        {
-          model: Role,
-        },
-      ],
+      // include: [
+      //   {
+      //     model: Role,
+      //   },
+      // ],
     });
     
     console.log("Found user...", userData);
@@ -108,7 +108,7 @@ const login = async (req, res) => {
         });
 
         // Check if user is an admin or not: 
-        if (userData.Role && userData.Role.name === "admin") {
+        if (userData.Role.length > 0 && userData.Role.name === "admin") {
           console.log("Checking admin or not...");
           // Handle admin login:
           return res.redirect("/dashboard");

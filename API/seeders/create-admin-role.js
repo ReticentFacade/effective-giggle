@@ -7,6 +7,7 @@ export const up = async (queryInterface, sequelize) => {
   // Define the data to be inserted in the "Roles" table:
   const rolesData = [
     {
+      // roleId: 1,
       name: "admin",
       createdAt: new Date(),
       updatedAt: new Date(),
