@@ -12,7 +12,7 @@
 
 ✔ club username with the cartEntries in createOrder function @done (19/07/2023, 21:02:16)
 
-☐ // make sure placeOrder creates two rows in the order table if there are two cartEntries
-- [username ([beanType] [beanAmount] [beanPrice])] 
+✔ // make sure placeOrder creates two rows in the order table if there are two cartEntries @done (23/07/2023, 01:33:06)
+    - [username ([beanType] [beanAmount] [beanPrice])] 
 
         

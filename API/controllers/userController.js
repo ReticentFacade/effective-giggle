@@ -81,11 +81,10 @@ const login = async (req, res) => {
       //   },
       // ],
     });
-    
-    console.log("Found user...", userData);
-    
-    if (userData) {
 
+    console.log("Found user...", userData);
+
+    if (userData) {
       console.log("Starting bcrypt comparison...");
       // after bcrypt, change it to: const isSame = await bcrypt.compare(req.body.password, userData.password);
       const isSame = await bcrypt.compare(req.body.password, userData.password);
@@ -107,9 +106,9 @@ const login = async (req, res) => {
           httpOnly: true,
         });
 
-        // Check if user is an admin or not: 
-        if (userData.Role.length > 0 && userData.Role.name === "admin") {
-          console.log("Checking admin or not...");
+        // Check if user is an admin or not:
+        if (userData.roleId === 1) {
+          console.log("Redirecting admin to dashboard...");
           // Handle admin login:
           return res.redirect("/dashboard");
         } else {
@@ -128,7 +127,7 @@ const login = async (req, res) => {
             "Token in localStorage and grabbed, returned userId",
             userId
           );
-  
+
           return res.status(200).send({
             authStatus: "user logged in 👌",
             message: {
@@ -140,16 +139,15 @@ const login = async (req, res) => {
             },
           });
         }
-        
       } else {
-        // Handle incorrect password: 
+        // Handle incorrect password:
         return res.status(401).send({
           authStatus: "unable to login user",
           message: "Password is incorrect",
         });
       }
     } else {
-      // Handle invalid user details: 
+      // Handle invalid user details:
       return res.status(401).send({
         authStatus: "unable to login user",
         message: "Invalid user details",

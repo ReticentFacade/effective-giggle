@@ -5,7 +5,7 @@
     ✔ createOrder function -----> uses cartController.checkout function @done (06/07/2023, 11:36:08)
         - checkout func sends cart's cartItems & itemCosts (idk how to total 'em up rn!) to orderController.createOrder
         
-    ☐ placeOrder function -----> uses cartController.checkout function
+    ✔ placeOrder function -----> uses cartController.checkout function @done (23/07/2023, 01:32:54)
     ☐ updateOrder function // ????????
     ✔ deleteOrder function @done (05/07/2023, 11:13:57)
     

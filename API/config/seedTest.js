@@ -3,6 +3,7 @@ import User from "../models/User.js";
 import Role from "../models/Role.js";
 import { up, down } from "../seeders/create-admin-role.js";
 import createAdminUser from "../seeders/create-admin-user.js";
+import addSellerRole from "../seeders/add-seller-role.js";
 
 async function seedDatabase() {
   try {
@@ -39,6 +40,15 @@ async function seedDatabase() {
 
     // --------------------------------------------------------------------------
 
+    // const queryInterface = sequelize.getQueryInterface();
+    // // Call the up function to add the admin role to the "roles" table:
+    // await addSellerRole(queryInterface, sequelize);
+    // console.log("Finished running the seeder to add seller role.");
+
+    // --------------------------------------------------------------------------
+
+    // --------------------------------------------------------------------------
+
     // console.log("Running the seeder to add admin user...");
     // createAdminUser();
     // console.log("Admin user created successfully.");
@@ -49,3 +59,4 @@ async function seedDatabase() {
 }
 
 seedDatabase();
+// console.log("Successfully seeded the database.");
