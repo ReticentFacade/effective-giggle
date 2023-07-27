@@ -1,25 +1,32 @@
 # To-do:
-- [x] routes:
+Routes:
     - [x] /api/auth
     - [x] /api/products 
-    
-        - [ ] /api/coffee-bean
-        - [ ] /api/user_details
+    - [x] /api/coffee-bean
+    - [x] /api/user_details
     - [x] /api/cart
     - [x] /api/orders
 
-- [x] DB: 
+
+DB: 
     - [x] DB models
     - [x] connection
 
-- [ ] Verify auth 
+
+Verify auth 
     - [ ] frontend
     - [x] backend: check & login using 2/3 accounts
 
-- [ ] OTP generation & verification
+
+OTP generation & verification
     - [ ] frontend
     - [ ] backend
 
-- UIiiii
-    
+
+- [ ] UIiiii
+
+
+![](todo-46.png)
+
+
 - [ ] Session Management

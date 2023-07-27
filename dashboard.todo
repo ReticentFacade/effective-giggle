@@ -1,0 +1,31 @@
+✔ Only admin can access /dashboard route @done (24/07/2023, 14:35:41)
+
+✔ Add dashboardRoutes @done (23/07/2023, 20:26:41)
+
+
+✔ Dashboard has 3 options: @done (24/07/2023, 14:35:42)
+    ✔ show users @done (24/07/2023, 01:13:45)
+    ✔ show sellers @done (24/07/2023, 14:28:39)
+    ✔ add admin @done (24/07/2023, 14:28:41)
+
+✔ Create function that will show all users: @done (24/07/2023, 14:28:17)
+    ✔ Show all users in a table @done (24/07/2023, 01:13:50)
+    ✔ Table should have 3 columns: @done (24/07/2023, 14:28:37)
+        ✔ Name @done (24/07/2023, 14:28:36)
+        ✔ Email @done (24/07/2023, 14:28:36)
+        ✔ Role @done (24/07/2023, 14:28:35)
+    ☐ Actions column should have 2 buttons:
+        ☐ Edit
+        ☐ Delete
+    ☐ Edit button should redirect to /edit-user/:id route
+    ☐ Delete button should delete user from database
+    
+✔ Create function that will show all sellers: @done (24/07/2023, 14:28:24)
+    ✔ Show all sellers in a table @done (24/07/2023, 14:28:25)
+    ✔ Table should have 3 columns: @done (24/07/2023, 14:28:32)
+        ✔ Name @done (24/07/2023, 14:28:32)
+        ✔ Email @done (24/07/2023, 14:28:30)
+        ✔ Role @done (24/07/2023, 14:28:29)
+    ☐ Actions column should have 2 buttons:
+        ☐ Edit
+        ☐ Delete

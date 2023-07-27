@@ -6,4 +6,5 @@
 Not sure about this yet:
     ✔ You'll seed your "Role" table 'seeders/create-admin-role.js' @done (20/07/2023, 13:04:39)
 
-☐ Middleware to check admin access 'middleware/checkAdmin.js'
+✔ Middleware to check admin access 'middleware/checkAdmin.js' @done (23/07/2023, 01:36:24)
+    - Even though it's made, it's not exactly being used in `login` function.
