@@ -1,0 +1,20 @@
+✔ set up routes: @done (29/06/2023, 13:50:30)
+    ✔ create routes -> handler -> product-routes.js @done (29/06/2023, 13:50:27)
+    ✔ link handler's index.js -> routes' index.js @done (29/06/2023, 13:50:29)
+
+✔ set up controllers: @done (29/06/2023, 16:07:01)
+    ✔ create ProductController.js @done (29/06/2023, 16:07:00)
+    ✔ link controller's index.js -> to -> routes' index.js @done (29/06/2023, 16:06:58)
+
+✔ set up db connection @done (29/06/2023, 22:53:08)
+    ✔ create `products` table @done (29/06/2023, 22:53:10)
+    ✔ add/delete data from `products` table @done (29/06/2023, 22:53:11)
+
+✔ set up model: @done (29/06/2023, 16:43:44)
+    ✔ create Product.js @done (29/06/2023, 16:43:41)
+    ✔ link model's index.js -> to -> controller's index.js @done (29/06/2023, 16:43:42)
+
+✔ make the routes get/add/delete the data from database where you're gonna use models as well @done (02/07/2023, 17:21:54)
+    ✔ get @done (30/06/2023, 00:57:05)
+    ✔ add/post @done (30/06/2023, 00:57:06)
+    ✔ delete @done (02/07/2023, 17:21:53)
