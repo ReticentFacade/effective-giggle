@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../css/Order.css";
 import "../css/btnEffect.css";
 // import OrderDetails from "../handlers/Order";
-// import { placeOrder } from "../handlers/Order";
+import placeOrder from "../handlers/Order";
 
 function Order() {
   const [coffeeType, setCoffeeType] = useState("");
