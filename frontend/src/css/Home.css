@@ -1,5 +1,7 @@
 .container {
     /* required for home-text class */
+    width: 100vw;
+    height: 100vh;
     position: relative;
 }
 
@@ -15,7 +17,7 @@
 }
 
 .image-container {
-    /* object-position: center; */
+    object-position: center;
     display: table-row;
 }
 
