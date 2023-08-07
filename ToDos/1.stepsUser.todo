@@ -1,0 +1,20 @@
+✔ setup routes @done (27/06/2023, 22:44:02)
+    ✔ 1. Create routes -> handler -> auth-routes.js @done (27/06/2023, 18:49:26)
+    ✔ 2. Create controller -> userController.js ( functions for signUp & login ) @done (27/06/2023, 21:56:28)
+    ✔ 3. Create middleware -> userCheck.js @done (27/06/2023, 22:27:40)
+    ✔ 4. Link model's User.js -> model's index.js @done (27/06/2023, 22:31:38)
+    ✔ 4. Link auth-routes.js -> to -> handler's index.js @done (27/06/2023, 22:41:13)
+    ✔ 5. Link handler's index.js -> to -> routes' index.js @done (27/06/2023, 22:43:59)
+
+✔ setup db and db connection @done (28/06/2023, 18:50:30)
+    ✔ create db @done (28/06/2023, 18:50:29)
+    ✔ create db connection using sequelize @done (28/06/2023, 18:50:26)
+    
+✔ setup models { https://sequelize.org/docs/v6/core-concepts/model-basics/ } @done (29/06/2023, 01:42:15)
+
+
+✔ make the routes get/add/delete the data from database where you're gonna use models as well @done (29/06/2023, 13:36:28)
+    ✔ get @done (29/06/2023, 13:33:55)
+    ✔ add/post @done (29/06/2023, 13:34:35)
+        ✔ signUp @done (29/06/2023, 13:19:25)
+        ✔ login @done (29/06/2023, 13:27:50)

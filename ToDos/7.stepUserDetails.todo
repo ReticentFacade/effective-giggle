@@ -1,0 +1,18 @@
+✔ Routes @done (09/07/2023, 18:07:27)
+
+✔ check username from login info @done (13/07/2023, 13:07:19)
+    ✔ make a separate function getUsername - that get username from UserController.js @done (13/07/2023, 13:13:57)
+    ✔ Pass that getUsername function in the getUserDetails function to make it look better @done (13/07/2023, 13:14:14)
+
+
+
+✔ create userDetails model @done (13/07/2023, 13:14:35)
+
+✔ club username with cartController's checkout @done (19/07/2023, 21:02:14)
+
+✔ club username with the cartEntries in createOrder function @done (19/07/2023, 21:02:16)
+
+✔ // make sure placeOrder creates two rows in the order table if there are two cartEntries @done (23/07/2023, 01:33:06)
+    - [username ([beanType] [beanAmount] [beanPrice])] 
+
+        
