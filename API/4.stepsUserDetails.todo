@@ -1,7 +1,0 @@
-✔ Routes @done (23/07/2023, 01:32:39)
-
-✔ Model: @done (23/07/2023, 01:32:43)
-    ✔ userId = FK for orders @done (23/07/2023, 01:32:41)
-    ✔ coffeeBeanId/productId = FK for orders @done (23/07/2023, 01:32:41)
-
-Declare all these relations in index.js of model-folder
