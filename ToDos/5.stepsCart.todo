@@ -1,0 +1,11 @@
+✔ Add routes @done (03/07/2023, 14:39:08)
+
+✔ Create a cartController that: @done (04/07/2023, 19:18:46)
+    + ☐ combines both userDetailsController & coffeeBeanController
+    + ☐ has a getCart function
+
+    ✔ post (/cart) -> get beanType, beanAmount and userAddr -> store it in localstorage of browser @done (04/07/2023, 17:38:36)
+    ✔ get (/cart) -> get data stored in localstorage @done (04/07/2023, 17:38:37)
+    ✔ post (/checkout) -> if successful -> remove items from cart @done (04/07/2023, 19:18:44)
+    
+☐ 
