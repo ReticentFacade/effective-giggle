@@ -1,74 +1,57 @@
 import React from "react";
-import { useState } from "react";
-// import AuthService from "./AuthServices/authServices.js";
+import { useRef, useEffect } from "react";
+import instance from "../../utils/api.js";
 import "../../css/Login.css";
-import AuthService from "./Auth/auth.js";
 
 function Register() {
-  const [ username, setUsername ] = useState("");
-  const [ password, setPassword ] = useState("");
-
-  const onChangeUsername = (e) => {
-    const username  = e.target.value;
-    setUsername(username);
-  };
-
-  const onChangePassword = (e) => {
-    const password = e.target.value;
-    setPassword(password);
-  };
-  
-  const handleRegister = (e) => {
-    const userData = {
-      "username": username,
-      "password": password
-    };
-    console.log("Registering user...");
-    const jsonObject = JSON.parse(JSON.stringify(userData));
-    console.log(jsonObject);
-    // console.log(userData);
-  };
-
   const required = (value) => {
     if (!value) {
       return <div className="invalid-details">This field is required!</div>;
     }
   };
 
-  AuthService.register(username, password).then(() => {
-    console.log("You have registered successfully!");
-  },
-  (err) => {
-    console.error(err);
+  const usernameInputRef = useRef();
+  const emailInputRef = useRef();
+  const passwordInputRef = useRef();
+
+  useEffect(() => {
+    usernameInputRef.current.focus();
   });
 
-  // const form = document.querySelector('.user-details-form');
-  // form.addEventListener('submit', (e) => {
-  //   event.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const username = usernameInputRef.current.value;
+    const email = emailInputRef.current.value;
+    const password = passwordInputRef.current.value;
 
-  //   const username = document.querySelector('.username-input').value;
-  //   const password = document.querySelector('.password-input').value;
+    try {
+      // Send registration data to the backend
+      const response = await instance.post("/auth/signup", {
+        username,
+        email,
+        password,
+      });
+      console.log(response.data);
 
-  //   try{
-  //     // Sending axios post req to backend route
-  //     const response = axios.post('/api/user-registered', userData);
-
-  //     // Handle response from backend
-  //     console.log(response.data);
-
-  //     // If successful registration, redirect to login page
-  //     if(response.data === "User registered successfully!"){
-  //       window.location.replace("/login");
-  //     }
-  //   } catch(err){
-  //     console.error(err);
-  //   }
-  // });
+      if (response.status === 200) {
+        // Redirect to homepage
+        window.location.href = "/";
+        console.log("Registration successful!");
+      } else {
+        console.error("Registration error: ", response.error);
+      }
+    } catch (error) {
+      console.error("Registration error: ", error);
+    }
+  };
 
   return (
     <div className="user-details">
       <h1>Register here:</h1>
-      <form className="user-details-form" onSubmit={handleRegister}>
+      <form
+        className="user-details-form"
+        // onSubmit={handleRegister}
+      >
         <div className="user-details-div">
           <label htmlFor="username" className="user-details-label">
             Username:{" "}
@@ -78,9 +61,21 @@ function Register() {
             id="username"
             className="user-details-input"
             name="username"
-            value={username}
-            onChange={onChangeUsername}
-            validations={{required}}
+            ref={usernameInputRef}
+            validations={{ required }}
+          />
+        </div>
+        <div className="user-details-div">
+          <label htmlFor="email" className="user-details-label">
+            Email:{" "}
+          </label>
+          <input
+            type="email"
+            id="email"
+            className="user-details-input"
+            name="email"
+            ref={emailInputRef}
+            validations={{ required }}
           />
         </div>
         <div className="user-details-div">
@@ -92,21 +87,21 @@ function Register() {
             id="password"
             className="user-details-input"
             name="password"
-            value={password}
             placeholder="   *******"
-            onChange={onChangePassword}
-            validations={{required}}
+            ref={passwordInputRef}
+            validations={{ required }}
           />
         </div>
       </form>
 
       <br />
       <br />
-      <button 
+      <button
         className="btn place-order-btn login-auth-btn"
         type="submit"
-        onClick={handleRegister}>
-          Register
+        onClick={handleSubmit}
+      >
+        Register
       </button>
     </div>
   );

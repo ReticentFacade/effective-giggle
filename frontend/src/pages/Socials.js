@@ -12,8 +12,8 @@ function Socials() {
       These are our social media handles
       <h1>
         <WaveAnimation />
-        Follow Us <a href="https://animejs.com/" target="_blank"></a> On{" "}
-        <a href="https://getwaves.io/" target="_blank">
+        Follow Us <a href="/" target="_blank"></a> On{" "}
+        <a href="//" target="_blank">
           Social Media!
         </a>
       </h1>
