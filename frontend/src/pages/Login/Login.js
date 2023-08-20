@@ -26,13 +26,10 @@ function Login() {
 
     try {
       // Send login data to the backend
-      const response = await instance.post(
-        "/auth/login",
-        {
-          username,
-          password,
-        }
-      );
+      const response = await instance.post("/auth/login", {
+        username,
+        password,
+      });
       console.log(response.data);
 
       if (response.status === 200) {

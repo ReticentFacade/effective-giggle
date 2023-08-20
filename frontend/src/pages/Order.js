@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import "../css/Order.css";
 import "../css/btnEffect.css";
 import instance from "../utils/api.js";
-// import OrderDetails from "../handlers/Order";
-// import placeOrder from "../handlers/Order";
+import Cycle from "../components/Order/Cycle";
 
 function Order() {
   const required = (value) => {
@@ -11,7 +10,7 @@ function Order() {
       return <div className="invalid-details">This field is required!</div>;
     }
   };
-  
+
   const [beanType, setBeanType] = useState("");
   const [beanAmount, setBeanAmount] = useState("");
   const [deliveryAddress, setDeliveryAddress] = useState("");
@@ -41,7 +40,7 @@ function Order() {
       const response = instance.post("/cart/addToCart", orderData, {
         headers: { "Content-Type": "application/json" },
       });
-      console.log(response.data);
+      console.log(response);
 
       if (response.status === 200) {
         alert("Added to cart successfully!");
@@ -51,6 +50,18 @@ function Order() {
       console.error("Error adding to cart: ", error.response.data);
     }
   };
+
+  function cartAlert() {
+    return (
+      <div
+        class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3"
+        role="alert"
+      >
+        <p class="font-bold">Successfully added to cart!</p>
+        <p class="text-sm">Your items have been added to cart. Checkout to place order!</p>
+      </div>
+    );
+  }
 
   return (
     <div className="page">
@@ -143,11 +154,13 @@ function Order() {
           </label>
         </form>
 
-        <button className="btn place-order-btn" onClick={handleAddToCart}>
+        <button className="btn place-order-btn" onClick={handleAddToCart}{...cartAlert}>
           Add To Cart
         </button>
       </div>
-      <div className="cart-animation"></div>
+      <div className="cart-animation">
+        <Cycle />
+      </div>
     </div>
   );
 }
