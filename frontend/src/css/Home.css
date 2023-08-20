@@ -1,148 +1,82 @@
+:root {
+  --bg-color: #e4bc85;
+  --light-bg: #e5e4ca;
+  --text-color: rgb(60, 42, 33);
+}
+
+* {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
 .container {
-    /* required for home-text class */
-    width: 100vw;
-    height: 100vh;
-    position: relative;
+  margin: -2rem 0;
+  display: flex;
 }
 
-.coffee-bean-bag img {
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    box-sizing: border-box;
-    position: relative;
-    -webkit-transform: rotate(-4deg);
-    filter: drop-shadow(20px 20px 25px #555);
+.div1 {
+  height: 100vh;
+  width: 50vw;
+  margin-left: 2rem;
+  padding: 0 2rem 0 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.image-container {
-    object-position: center;
-    display: table-row;
+.bigCoffee img {
+  height: 80%;
+  width: 85%;
+  overflow: hidden;
+  float: right;
+}
+#bigCoffeeBag {
+  animation: rotateBag 6s infinite;
 }
 
-/* ################################ */
-.mantine-zmc0ul::before {
-    position: absolute;
-    top: 0rem;
-    right: 0rem;
-    left: 0rem;
-    bottom: 0rem;
-    content: "";
-    background: transparent;
-    z-index: 10;
-}
-.mantine-zmc0ul::after {
-    position: absolute;
-    top: 0rem;
-    right: 0rem;
-    left: 0rem;
-    bottom: 0rem;
-    content: "";
-    background: transparent;
-    /* -webkit-animation: none; */
-    /* z-index: 11; */
-}
-/* ################################ */
-
-/* flex-shrink: 0; */
-
-.sub-container {
-    display: flex;
-    align-items: center;
-    /* justify-content: center; */
-    justify-content: space-around;
+.div2 {
+  height: 100vh;
+  width: 60vw;
+  padding: 0 0 0 4rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 
 .home-text {
-    max-width: 300px;
-    /* width: 100%; */
-    height: 20px;
-    margin-top: 50px;
-    padding-inline: 50px;
-    color:rgb(61, 43, 33);
-    padding-left: 50px;
-    /* text-align: -webkit-auto; */
-    text-align: left;
-
-    /* width: max-content; */
-    
-    bottom: 0;
-    font-size: 30px;
-    font-weight: bolder;
-}
-/* .home-text p{
-    border: 2px dotted rgb(96, 139, 168);
-} */
-
-.button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 2rem;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
-.order-now {
-    color: rgb(61, 43, 33);
-    padding: 15px;
-    background: rgb(229, 229, 203);
-    width: 55%;
-    font-size: 20px;
-    transition: all 0.3s ease;
-}
-.order-now:hover {
-    transform: translate(0px, 5px) !important;
-    -webkit-transform: translate(0px, 5px) !important;
-    box-shadow: 0px 1px 0px 0px !important;
+.order-btn {
+  margin: 4rem 0 0 0;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border-radius: 1rem;
+  background: var(--light-bg);
+
+  transition-timing-function: ease;
+  transition-duration: 400ms;
 }
 
-.button-club {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.button-club img {
-    padding-right: 50px;
+.order-btn:hover {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, -5px);
+  box-shadow: 0px 0.75px 0px 0px;
 }
 
-.bean-image-container {
-    position: relative;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(40px, max-content));
-
-    /* transform: translateX(-55px); */
-    filter: drop-shadow(-20px 0 50px #555);
-}
-
-.coffee-bean-1 {
-    max-width: 300px;
-    width: 100%;
-    height: 50%;
-    transform: rotate(28deg) translate(-6rem, 0rem);
-    
-    position: absolute;
-    top: 5rem;
-    z-index: 2;
-    
-    /* border: 2px solid purple; */
-}
-.coffee-bean-2 {
-    width: 170%;
-    height: 50%;
-    transform: rotate(30deg) translate(0rem, 9rem); 
-    
-    position: relative;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    
-    /* border: 2px solid blue; */
-}
-
-.coffee-bean-1 img {
-    transform: scale(0.5);
-}
-.coffee-bean-2 img {
-    transform: scale(0.75);
+@keyframes rotateBag {
+  from {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-4deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
 }

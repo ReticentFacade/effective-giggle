@@ -1,5 +1,6 @@
 import React from "react";
-import axios from "axios";
+// import axios from "axios";
+import instance from "../../utils/api.js";
 import { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../css/Login.css";
@@ -24,17 +25,14 @@ function Login() {
     const password = passwordInputRef.current.value;
 
     try {
-      const config = {
-        headers: {
-          "Content-type": "application/json",
-        },
-      };
-
       // Send login data to the backend
-      const response = await axios.post("api/auth/login", config, {
-        username,
-        password,
-      });
+      const response = await instance.post(
+        "/auth/login",
+        {
+          username,
+          password,
+        }
+      );
       console.log(response.data);
 
       if (response.status === 200) {

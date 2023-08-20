@@ -1,0 +1,22 @@
+1. Link Order page to API:
+    ☐ Get cart items from API
+    ☐ Display cart items
+    ☐ Add item to cart
+    ☐ Remove item from cart?
+
+
+2. Link Register page to API:
+    ☐ Create a new user
+    ☐ Save their details in postgres db
+    
+
+3. Fix Navbar:
+    ☐ Remove the underline 
+    ☐ Clean css
+    ☐ Make the navbar responsive
+
+
+4. Fix Socials-page:
+    ☐ Add animejs? 
+    ☐ Clean css
+    ☐ Make the page responsive
