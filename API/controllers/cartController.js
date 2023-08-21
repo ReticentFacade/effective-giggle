@@ -43,10 +43,10 @@ const addToCart = async (req, res) => {
     localStorage.setItem("cart", JSON.stringify(cartData));
 
     console.log("Cart: ", cartData);
-    // res.status(200).json({ message: "Successfully added to cart!" });
+    res.status(200).json({ message: "Successfully added to cart!" });
   } catch (err) {
     console.log(err);
-    // res.status(500).json({ message: "Unable to add it to cart :(" });
+    res.status(500).json({ message: "Unable to add it to cart :(" });
   }
 };
 
@@ -92,7 +92,7 @@ const checkout = async (req, res) => {
     localStorage.removeItem("cart");
 
     console.log("Cart cleared successfully!");
-    // res.status(200).json({ message: "Successfully checked out!" });
+    res.status(200).json({ message: "Successfully checked out!" });
   } catch (err) {
     console.log(err.response.data);
     res.status(500).json({ message: "Unable to checkout!" });
