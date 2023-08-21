@@ -3,20 +3,11 @@ import "../css/Socials.css";
 import { Link } from "react-router-dom";
 import WaveAnimation from "../components/Socials/WaveAnimation";
 
-import { Group, Button, rem } from "@mantine/core";
-import { IconBrandTwitter } from "@tabler/icons-react";
-
 function Socials() {
   return (
     <div className="social-handles">
-      These are our social media handles
-      <h1>
-        <WaveAnimation />
-        Follow Us <a href="/" target="_blank"></a> On{" "}
-        <a href="//" target="_blank">
-          Social Media!
-        </a>
-      </h1>
+      <WaveAnimation />
+
       <svg class="wave-top" width="100" viewBox="0 0 1200 250">
         <path
           fill-rule="evenodd"
@@ -25,6 +16,12 @@ function Socials() {
           fill="#3D2B21"
         />
       </svg>
+      <h1>
+        Follow Us <a href="/" target="_blank"></a> On{" "}
+        <a href="//" target="_blank">
+          Social Media!
+        </a>
+      </h1>
     </div>
   );
 }

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../css/Order.css";
 import "../css/btnEffect.css";
 import instance from "../utils/api.js";
-import Cycle from "../components/Order/Cycle";
 
 function Order() {
   const required = (value) => {
@@ -32,6 +31,8 @@ function Order() {
       deliveryAddress,
     };
 
+    console.log("Order data: ", orderData);
+
     // Call the handler function in Order.js from handler-directory and just pass the orderData:
     // placeOrder(orderData);
 
@@ -58,7 +59,9 @@ function Order() {
         role="alert"
       >
         <p class="font-bold">Successfully added to cart!</p>
-        <p class="text-sm">Your items have been added to cart. Checkout to place order!</p>
+        <p class="text-sm">
+          Your items have been added to cart. Checkout to place order!
+        </p>
       </div>
     );
   }
@@ -154,13 +157,15 @@ function Order() {
           </label>
         </form>
 
-        <button className="btn place-order-btn" onClick={handleAddToCart}{...cartAlert}>
+        <button
+          className="btn place-order-btn"
+          onClick={handleAddToCart}
+          {...cartAlert}
+        >
           Add To Cart
         </button>
       </div>
-      <div className="cart-animation">
-        <Cycle />
-      </div>
+      <div className="cart-animation"></div>
     </div>
   );
 }
