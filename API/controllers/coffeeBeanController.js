@@ -4,7 +4,7 @@ const validateCoffeeBeans = async (type, amount, res) => {
   try {
     // Need to fix this. 
     const validType = ["Arabica", "Robusta", "Liberica"];
-    const validAmount = ["5kg", "15kg", "30kg"];
+    const validAmount = ["5 kg", "15 kg", "30 kg"];
 
     if (!validType.includes(type) || !validAmount.includes(amount)) {
       throw new Error("Invalid type or amount!");

@@ -43,7 +43,7 @@ const addToCart = async (req, res) => {
     localStorage.setItem("cart", JSON.stringify(cartData));
 
     console.log("Cart: ", cartData);
-    res.status(200).json({ message: "Successfully added to cart!" });
+    res.json({ message: "Item added to cart successfully!", cartData });
   } catch (err) {
     console.log(err);
     res.status(500).json({ message: "Unable to add it to cart :(" });

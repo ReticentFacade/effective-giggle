@@ -1,0 +1,19 @@
+frontend
+  - take input
+    - beanType
+    - beanAmount
+    - deliveryAddress
+
+send to -> localhost:5000/api/addToCart
+
+addToCart
+  - beanType
+  - beanAmount
+  - deliveryAddress
+    - add to localstorage (cart)
+    - res.status(200).json({ message: "Item added to cart successfully" })
+
+on checkout page
+  - retrieve cart info from localstorage
+  - on clicking checkout button
+    - res.status(200).json({ message: "Checkout Successful" })

@@ -23,7 +23,7 @@ function Order() {
   const handleDeliveryAddressChange = (event) => {
     setDeliveryAddress(event.target.value);
   };
-  const handleAddToCart = () => {
+  const handleAddToCart = async () => {
     // Create an object with the user input data:
     const orderData = {
       beanType,
@@ -33,20 +33,17 @@ function Order() {
 
     console.log("Order data: ", orderData);
 
-    // Call the handler function in Order.js from handler-directory and just pass the orderData:
-    // placeOrder(orderData);
-
     try {
       // Send order data to the backend
-      const response = instance.post("/cart/addToCart", orderData, {
+      const response = await instance.post("/cart/addToCart", orderData, {
         headers: { "Content-Type": "application/json" },
       });
-      console.log(response);
+      console.log("This is the response after `Order data`: ", response);
 
       if (response.status === 200) {
         alert("Added to cart successfully!");
         console.log("Added to cart successfully!");
-      }
+      } 
     } catch (error) {
       console.error("Error adding to cart: ", error.response.data);
     }
