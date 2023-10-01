@@ -1,10 +1,15 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
+    // "./src/**/*.{js,jsx,ts,tsx}",
     "./src/**/*.{html,js,jsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+    //   transitionProperty: {
+    //     'height': 'height',
+    //     'spacing': 'margin, padding',
+    // },
   },
   variants: {
     extend: {
@@ -12,5 +17,6 @@ export default {
     },
   },
   plugins: [],
+}
 }
 

@@ -43,7 +43,7 @@ function Order() {
       if (response.status === 200) {
         alert("Added to cart successfully!");
         console.log("Added to cart successfully!");
-      } 
+      }
     } catch (error) {
       console.error("Error adding to cart: ", error.response.data);
     }
@@ -73,6 +73,7 @@ function Order() {
           <label>
             Arabica
             <input
+              className="radio-btn"
               type="radio"
               name="coffee-type"
               value="Arabica"
@@ -84,6 +85,7 @@ function Order() {
           <label>
             Robusta
             <input
+              className="radio-btn"
               type="radio"
               name="coffee-type"
               value="Robusta"
@@ -95,6 +97,7 @@ function Order() {
           <label>
             Liberica
             <input
+              className="radio-btn"
               type="radio"
               name="coffee-type"
               value="Liberica"
@@ -110,6 +113,7 @@ function Order() {
           <label>
             5 kg
             <input
+              className="radio-btn"
               type="radio"
               name="coffee-amount"
               value="5 kg"
@@ -120,6 +124,7 @@ function Order() {
           <label>
             15 kg
             <input
+              className="radio-btn"
               type="radio"
               name="coffee-amount"
               value="15 kg"
@@ -130,6 +135,7 @@ function Order() {
           <label>
             30 kg
             <input
+              className="radio-btn"
               type="radio"
               name="coffee-amount"
               value="30 kg"
