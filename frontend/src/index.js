@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./css/index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+// import "./css/output.css";
+import App from "./App.js";
+import reportWebVitals from "./reportWebVitals.js";
 import { BrowserRouter } from "react-router-dom";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 

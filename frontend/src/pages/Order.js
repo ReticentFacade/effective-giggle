@@ -64,8 +64,8 @@ function Order() {
   }
 
   return (
-    <div className="page">
-      <div className="order-side">
+    <div className="page ml-10 mr-32">
+      <div className="order-side ml-5">
         <h1>Customize your order</h1>
 
         <h2>Coffee Type</h2>

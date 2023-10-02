@@ -5,7 +5,6 @@
   display: flex;
   border-radius: 1rem;
   margin-top: 1.5rem;
-  background-color: #E5E5CB;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   /* border: 2px solid black; */
 }
@@ -61,7 +60,24 @@ input {
 /* ----------------------- */
 
 .cart-animation {
-  /* border: 2px solid pink; */
-  width: 50vw;
+  width: 70vw;
   height: 90vh;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background-color: #E5E5CB;
+  /* border: 2px solid pink; */
+}
+
+@media (max-width: 1107px) {
+  .order-side {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+  }
+  .cart-animation {
+    display: none;
+  }
 }

@@ -2,15 +2,17 @@
 export default {
   content: [
     "./src/**/*.{html,js,jsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./pages/**/*.{html,js}",
+    "./components/**/*.{html,js}",
   ],
   theme: {
     extend: {},
   },
   variants: {
     extend: {
-      animation: ['group-hover'],
+      animation: ["group-hover"],
     },
   },
   plugins: [],
-}
-
+};

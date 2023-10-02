@@ -2,12 +2,12 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./css/App.css";
 import Navbar from "./components/Navbar/Navbar.js";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Login from "./pages/Login/Login";
-import Order from "./pages/Order";
-import Socials from "./pages/Socials";
-import Register from "./pages/Login/Register";
+import Home from "./pages/Home.js";
+import About from "./pages/About.js";
+import Login from "./pages/Login/Login.js";
+import Order from "./pages/Order.js";
+import Socials from "./pages/Socials.js";
+import Register from "./pages/Login/Register.js";
 
 function App() {
   return (
