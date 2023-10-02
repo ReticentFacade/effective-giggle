@@ -1,6 +1,8 @@
 import React from "react";
 import "../css/Home.css";
 import bigCoffee from "../assets/bigCoffee.png";
+import oneCoffeeBean from "../assets/oneCoffeeBean.png";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -24,15 +26,33 @@ const Home = () => {
             for your coffee <br />
             straight from <b>farmers!</b>
           </p>
-          <div className="order-btn">Order Now!</div>
+          <div className="order-btn">
+            <Link to="/order" className="order-btn-link">
+              Order Now!
+            </Link>
+          </div>
         </div>
 
-        <div className="home-beans">
-          <div className="oneCoffee" id="left">
-            Coffee Bean One
+        <div className="home-beans flex flex-col items-center">
+          <div
+          // className="z-10"
+          >
+            <img
+              src={oneCoffeeBean}
+              alt="oneCoffee"
+              id="leftBean"
+              className="oneCoffeeBean w-32 h-24 transform transparent-bg"
+            />
           </div>
-          <div className="oneCoffee" id="right">
-            Coffee Bean Two
+          <div
+          // className="z-0"
+          >
+            <img
+              src={oneCoffeeBean}
+              alt="oneCoffee"
+              id="rightBean"
+              className="oneCoffeeBean w-32 h-24 transform transparent-bg"
+            />
           </div>
         </div>
       </div>
