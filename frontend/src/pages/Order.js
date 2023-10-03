@@ -161,7 +161,7 @@ function Order() {
         </form>
 
         <button
-          className="btn place-order-btn"
+          className="btn login-auth-btn"
           onClick={handleAddToCart}
           {...cartAlert}
         >

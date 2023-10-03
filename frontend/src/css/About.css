@@ -1,0 +1,13 @@
+.about-us-container {
+  border-radius: 1rem;
+  height: 88vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.about-us-btn {
+  width: 10vw;
+}
+
+.about-us-btn-link {
+  background-color: transparent;
+}
