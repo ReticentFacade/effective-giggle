@@ -34,9 +34,7 @@ const Home = () => {
         </div>
 
         <div className="home-beans flex flex-col items-center">
-          <div
-          // className="z-10"
-          >
+          <div>
             <img
               src={oneCoffeeBean}
               alt="oneCoffee"
@@ -44,9 +42,7 @@ const Home = () => {
               className="oneCoffeeBean w-32 h-24 transform transparent-bg"
             />
           </div>
-          <div
-          // className="z-0"
-          >
+          <div>
             <img
               src={oneCoffeeBean}
               alt="oneCoffee"

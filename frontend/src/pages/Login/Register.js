@@ -46,63 +46,62 @@ function Register() {
   };
 
   return (
-    <div className="user-details">
-      <h1>Register here:</h1>
-      <form
-        className="user-details-form"
-        // onSubmit={handleRegister}
-      >
-        <div className="user-details-div">
-          <label htmlFor="username" className="user-details-label">
-            Username:{" "}
-          </label>
-          <input
-            type="text"
-            id="username"
-            className="user-details-input"
-            name="username"
-            ref={usernameInputRef}
-            validations={{ required }}
-          />
-        </div>
-        <div className="user-details-div">
-          <label htmlFor="email" className="user-details-label">
-            Email:{" "}
-          </label>
-          <input
-            type="email"
-            id="email"
-            className="user-details-input"
-            name="email"
-            ref={emailInputRef}
-            validations={{ required }}
-          />
-        </div>
-        <div className="user-details-div">
-          <label htmlFor="password" className="user-details-label">
-            Password:{" "}
-          </label>
-          <input
-            type="password"
-            id="password"
-            className="user-details-input"
-            name="password"
-            placeholder="   *******"
-            ref={passwordInputRef}
-            validations={{ required }}
-          />
-        </div>
-      </form>
+    <div className="min-h-screen flex justify-center">
+      <div className="user-details">
+        <h1 className="mt-20 text-left">Register here:</h1>
+        <form className="user-details-form mt-24 mb-4 flex-col">
+          <div className="mb-10 flex justify-between items-center">
+            <label htmlFor="username" className="user-details-label">
+              Username:
+            </label>
+            <input
+              type="text"
+              id="username"
+              className="user-details-input ml-2"
+              name="username"
+              ref={usernameInputRef}
+              validations={{ required }}
+            />
+          </div>
+          <div className="mb-10 flex justify-between items-center">
+            <label htmlFor="email" className="user-details-label">
+              Email:
+            </label>
+            <input
+              type="email"
+              id="email"
+              className="user-details-input ml-2"
+              name="email"
+              ref={emailInputRef}
+              validations={{ required }}
+            />
+          </div>
+          <div className="mb-4 flex justify-between items-center">
+            <label htmlFor="password" className="user-details-label">
+              Password:
+            </label>
+            <input
+              type="password"
+              id="password"
+              className="user-details-input ml-2"
+              name="password"
+              placeholder=" ********"
+              ref={passwordInputRef}
+              validations={{ required }}
+            />
+          </div>
+        </form>
 
-      <br />
-      <br />
-      <button
-        className="btn place-order-btn login-auth-btn"
-        type="submit"
-        onClick={handleSubmit}
-      >
-        Register
-      </button>
+        <br />
+        <br />
+        <button
+          className="btn place-order-btn login-auth-btn"
+          type="submit"
+          onClick={handleSubmit}
+        >
+          Register
+        </button>
+      </div>
     </div>
   );
 }

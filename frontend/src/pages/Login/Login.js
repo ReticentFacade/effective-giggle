@@ -45,50 +45,52 @@ function Login() {
   };
 
   return (
-    <div className="user-details">
-      <h1>Login here:</h1>
-      <form className="user-details-form">
-        <div className="user-details-div">
-          <label htmlFor="username" className="user-details-label">
-            Username:{" "}
-          </label>
-          <input
-            type="text"
-            id="username"
-            className="user-details-input"
-            ref={usernameInputRef}
-            validations={{ required }}
-          />
-        </div>
-        <div className="user-details-div">
-          <label htmlFor="password" className="user-details-label">
-            Password:{" "}
-          </label>
-          <input
-            type="password"
-            id="password"
-            className="user-details-input"
-            ref={passwordInputRef}
-            placeholder="   *******"
-            validations={{ required }}
-          />
-        </div>
-      </form>
+    <div className="min-h-screen flex justify-center">
+      <div className="user-details">
+        <h1 className="mt-20 text-left">Login here:</h1>
+        <form className="user-details-form flex-col mt-24 mb-24">
+          <div className="mb-10 flex items-center justify-between">
+            <label htmlFor="username" className="user-details-label">
+              Username:
+            </label>
+            <input
+              type="text"
+              id="username"
+              className="user-details-input"
+              ref={usernameInputRef}
+              validations={{ required }}
+            />
+          </div>
+          <div className="mt-4 flex items-center justify-between">
+            <label htmlFor="password" className="user-details-label">
+              Password:
+            </label>
+            <input
+              type="password"
+              id="password"
+              className="user-details-input"
+              ref={passwordInputRef}
+              placeholder=" ********"
+              validations={{ required }}
+            />
+          </div>
+        </form>
 
-      <br />
-      <br />
-      <button
-        className="btn place-order-btn login-auth-btn"
-        onClick={handleSubmit}
-      >
-        Login
-      </button>
-      <p>
-        Not registered? &nbsp;
-        <Link to="/register">
-          <u>Click here</u>
-        </Link>
-      </p>
+        <br />
+        <br />
+        <button
+          className="btn place-order-btn login-auth-btn"
+          onClick={handleSubmit}
+        >
+          Login
+        </button>
+        <p>
+          Not registered? &nbsp;
+          <Link to="/register">
+            <u>Click here</u>
+          </Link>
+        </p>
+      </div>
     </div>
   );
 }

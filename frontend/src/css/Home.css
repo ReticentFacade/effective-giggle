@@ -41,14 +41,16 @@
 
 .oneCoffeeBean {
   background: none;
+  position: relative;
 }
 #leftBean {
-  rotate: -140deg;
+  z-index: 1;
+  rotate: -145deg;
   margin-bottom: -1.5rem;
   filter: drop-shadow(0 0 2rem rgb(60, 42, 33));
 }
 #rightBean {
-  rotate: -145deg;
+  rotate: -150deg;
   filter: drop-shadow(0 0 2rem rgb(60, 42, 33));
 }
 

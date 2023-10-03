@@ -1,17 +1,5 @@
 .user-details-form{
-    padding: 2em;
     color: var(--darkBrown);
-    width: 50vw;
-    height: 25vh;
-    
-    display: flex;
-    flex-direction: column !important;
-}
-
-.user-details-div{
-    padding: 1rem;
-    text-align: center;
-    margin: 0 1em 0 0;
 }
 
 .user-details-label{
@@ -21,8 +9,8 @@
 .user-details-input{
     background: var(--lighterBg);
     padding: 1em;
-    width: 9em;
-    height: 1.5em;
+    width: 10em;
+    height: 1.9em;
     border: 2px solid var(--darkBrown);
     border-radius: 1em;
 }
