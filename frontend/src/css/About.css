@@ -4,10 +4,6 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.about-us-btn {
-  width: 10vw;
-}
-
-.about-us-btn-link {
-  background-color: transparent;
+.about-us-btns button {
+  width: 15vw;
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../css/Order.css";
 import "../css/btnEffect.css";
 import instance from "../utils/api.js";
+import BeanRadio from "../assets/Order/beanRadio.png";
 
 function Order() {
   const required = (value) => {
@@ -13,11 +14,15 @@ function Order() {
   const [beanType, setBeanType] = useState("");
   const [beanAmount, setBeanAmount] = useState("");
   const [deliveryAddress, setDeliveryAddress] = useState("");
+  const [selectedType, setSelectedType] = useState(""); // for changing the radio button image // Bean Type
+  const [selectedAmount, setSelectedAmount] = useState(""); // for changing the radio button image // Bean Amount
 
   const handleBeanTypeChange = (event) => {
+    setSelectedType(event.target.value);
     setBeanType(event.target.value);
   };
   const handleBeanAmountChange = (event) => {
+    setSelectedAmount(event.target.value);
     setBeanAmount(event.target.value);
   };
   const handleDeliveryAddressChange = (event) => {
@@ -52,16 +57,20 @@ function Order() {
   function cartAlert() {
     return (
       <div
-        class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3"
+        className="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3"
         role="alert"
       >
-        <p class="font-bold">Successfully added to cart!</p>
-        <p class="text-sm">
+        <p className="font-bold">Successfully added to cart!</p>
+        <p className="text-sm">
           Your items have been added to cart. Checkout to place order!
         </p>
       </div>
     );
   }
+
+  const labelClasses = "flex items-center space-x-2";
+  const radioClasses =
+    "radio-btn h-5 w-5 text-indigo-600 form-radio focus:ring-indigo-500";
 
   return (
     <div className="page ml-10 mr-32">
@@ -69,84 +78,105 @@ function Order() {
         <h1>Customize your order</h1>
 
         <h2>Coffee Type</h2>
-        <form className="coffee-type">
-          <label>
+        <form className="coffee-type pt-4 pb-4">
+          <label className={labelClasses}>
             Arabica
             <input
-              className="radio-btn"
+              className={`${beanType === "Arabica" ? "sr-only" : radioClasses}`}
               type="radio"
               name="coffee-type"
               value="Arabica"
               checked={beanType === "Arabica"}
+              // onClick={() => setSelectedType(BeanRadio)}
               onChange={handleBeanTypeChange}
             />
+            {selectedType === "Arabica" && (
+              <img src={BeanRadio} alt="Bean Radio" className="h-9" />
+            )}
           </label>
           {/* <br /> */}
-          <label>
+          <label className={labelClasses}>
             Robusta
             <input
-              className="radio-btn"
+              className={`${beanType === "Robusta" ? "sr-only" : radioClasses}`}
               type="radio"
               name="coffee-type"
               value="Robusta"
               checked={beanType === "Robusta"}
               onChange={handleBeanTypeChange}
             />
+            {selectedType === "Robusta" && (
+              <img src={BeanRadio} alt="Bean Radio" className="h-9" />
+            )}
           </label>
           {/* <br /> */}
-          <label>
+          <label className={labelClasses}>
             Liberica
             <input
-              className="radio-btn"
+              className={`${
+                beanType === "Liberica" ? "sr-only" : radioClasses
+              }`}
               type="radio"
               name="coffee-type"
               value="Liberica"
               checked={beanType === "Liberica"}
               onChange={handleBeanTypeChange}
             />
+            {selectedType === "Liberica" && (
+              <img src={BeanRadio} alt="Bean Radio" className="h-9" />
+            )}
           </label>
           {/* <br /> */}
         </form>
 
         <h2>Coffee Amount</h2>
-        <form className="coffee-amount">
-          <label>
+        <form className="coffee-amount pt-4 pb-4">
+          <label className={labelClasses}>
             5 kg
             <input
-              className="radio-btn"
+              className={`${beanAmount === "5 kg" ? "sr-only" : radioClasses}`}
               type="radio"
               name="coffee-amount"
               value="5 kg"
               checked={beanAmount === "5 kg"}
               onChange={handleBeanAmountChange}
             />
+            {selectedAmount === "5 kg" && (
+              <img src={BeanRadio} alt="Bean Radio" className="h-9" />
+            )}
           </label>
-          <label>
+          <label className={labelClasses}>
             15 kg
             <input
-              className="radio-btn"
+              className={`${beanAmount === "15 kg" ? "sr-only" : radioClasses}`}
               type="radio"
               name="coffee-amount"
               value="15 kg"
               checked={beanAmount === "15 kg"}
               onChange={handleBeanAmountChange}
             />
+            {selectedAmount === "15 kg" && (
+              <img src={BeanRadio} alt="Bean Radio" className="h-9" />
+            )}
           </label>
-          <label>
+          <label className={labelClasses}>
             30 kg
             <input
-              className="radio-btn"
+              className={`${beanAmount === "30 kg" ? "sr-only" : radioClasses}`}
               type="radio"
               name="coffee-amount"
               value="30 kg"
               checked={beanAmount === "30 kg"}
               onChange={handleBeanAmountChange}
             />
+            {selectedAmount === "30 kg" && (
+              <img src={BeanRadio} alt="Bean Radio" className="h-9" />
+            )}
           </label>
         </form>
 
         <h2>Delivery Address</h2>
-        <form className="delivery-form">
+        <form className="delivery-form pt-4 pb-6">
           <label>
             <input
               type="text"
@@ -156,6 +186,7 @@ function Order() {
               placeholder="123 Main Street"
               validations={{ required }}
               onChange={handleDeliveryAddressChange}
+              style={{ backgroundColor: "#e5e5cb" }}
             />
           </label>
         </form>

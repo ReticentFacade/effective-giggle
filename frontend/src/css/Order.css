@@ -50,11 +50,18 @@ input {
   border-radius: 0.5rem;
   padding-left: 1rem;
   background-color: #e5e5cb;
+  border: 2px solid rgb(61, 43, 33);
 }
 
 .radio-btn {
-  border: 1px solid rgb(61, 43, 33);
+  border-radius: 50%;
+  border-color: rgb(61, 43, 33);
+  border: 2px solid rgb(61, 43, 33);
   background-color: #e5e5cb;
+}
+
+.radio-img {
+  margin-left: -2px;
 }
 
 /* ----------------------- */
