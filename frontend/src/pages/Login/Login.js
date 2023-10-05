@@ -34,7 +34,7 @@ function Login() {
 
       if (response.status === 200) {
         // Redirect to homepage
-        window.location.href = "/";
+        window.location.href = "/order";
         console.log("Login successful!");
       } else {
         console.error("Login error: ", response.error);

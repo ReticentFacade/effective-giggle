@@ -1,14 +1,11 @@
-import React from "react";
-import { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import instance from "../../utils/api.js";
 import "../../css/Login.css";
 
 function Register() {
-  const required = (value) => {
-    if (!value) {
-      return <div className="invalid-details">This field is required!</div>;
-    }
-  };
+  const [usernameError, setUsernameError] = useState(null);
+  const [emailError, setEmailError] = useState(null);
+  const [passwordError, setPasswordError] = useState(null);
 
   const usernameInputRef = useRef();
   const emailInputRef = useRef();
@@ -16,13 +13,34 @@ function Register() {
 
   useEffect(() => {
     usernameInputRef.current.focus();
-  });
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const username = usernameInputRef.current.value;
     const email = emailInputRef.current.value;
     const password = passwordInputRef.current.value;
+
+    // Reset error messages
+    setUsernameError(null);
+    setEmailError(null);
+    setPasswordError(null);
+
+    // Validate input fields
+    if (!username) {
+      setUsernameError("Username is required");
+      return;
+    }
+
+    if (!email) {
+      setEmailError("Email is required");
+      return;
+    }
+
+    if (!password) {
+      setPasswordError("Password is required");
+      return;
+    }
 
     try {
       // Send registration data to the backend
@@ -33,12 +51,10 @@ function Register() {
       });
       console.log(response.data);
 
-      if (response.status === 200) {
-        // Redirect to homepage
-        window.location.href = "/";
+      if (response.status === 201) {
         console.log("Registration successful!");
-      } else {
-        console.error("Registration error: ", response.error);
+        // Redirect to homepage
+        window.location.href = "/login";
       }
     } catch (error) {
       console.error("Registration error: ", error);
@@ -60,8 +76,13 @@ function Register() {
               className="user-details-input ml-2"
               name="username"
               ref={usernameInputRef}
-              validations={{ required }}
             />
+            {usernameError && (
+              <div className="invalid-details">
+                <br />
+                {usernameError}
+              </div>
+            )}
           </div>
           <div className="mb-10 flex justify-between items-center">
             <label htmlFor="email" className="user-details-label">
@@ -73,8 +94,13 @@ function Register() {
               className="user-details-input ml-2"
               name="email"
               ref={emailInputRef}
-              validations={{ required }}
             />
+            {emailError && (
+              <div className="invalid-details">
+                <br />
+                {emailError}
+              </div>
+            )}
           </div>
           <div className="mb-4 flex justify-between items-center">
             <label htmlFor="password" className="user-details-label">
@@ -87,8 +113,13 @@ function Register() {
               name="password"
               placeholder=" ********"
               ref={passwordInputRef}
-              validations={{ required }}
             />
+            {passwordError && (
+              <div className="invalid-details">
+                <br />
+                {passwordError}
+              </div>
+            )}
           </div>
         </form>
 
