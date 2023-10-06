@@ -3,12 +3,22 @@ import "../css/Order.css";
 import "../css/btnEffect.css";
 import instance from "../utils/api.js";
 import BeanRadio from "../assets/Order/beanRadio.png";
+import EmptyCart from "../components/CartPreview/EmptyCart.js";
+import BeanTypePreview from "../components/CartPreview/BeanTypes/index.js";
 
 function Order() {
   const required = (value) => {
     if (!value) {
       return <div className="invalid-details">This field is required!</div>;
     }
+  };
+
+  const [selectedBeanType, setSelectedBeanType] = useState("EmptyCart");
+  const beanTypeMap = {
+    EmptyCart: <EmptyCart />,
+    ArabicaPreview: <BeanTypePreview.ArabicaPreview />,
+    RobustaPreview: <BeanTypePreview.RobustaPreview />,
+    LibericaPreview: <BeanTypePreview.LibericaPreview />,
   };
 
   const [beanType, setBeanType] = useState("");
@@ -68,7 +78,7 @@ function Order() {
     );
   }
 
-  const labelClasses = "flex items-center space-x-2";
+  const labelClasses = "flex items-center";
   const radioClasses =
     "radio-btn h-5 w-5 text-indigo-600 form-radio focus:ring-indigo-500";
 
@@ -87,11 +97,11 @@ function Order() {
               name="coffee-type"
               value="Arabica"
               checked={beanType === "Arabica"}
-              // onClick={() => setSelectedType(BeanRadio)}
+              onClick={() => setSelectedBeanType("ArabicaPreview")}
               onChange={handleBeanTypeChange}
             />
             {selectedType === "Arabica" && (
-              <img src={BeanRadio} alt="Bean Radio" className="h-9" />
+              <img src={BeanRadio} alt="Bean Radio" className="h-10" />
             )}
           </label>
           {/* <br /> */}
@@ -103,10 +113,11 @@ function Order() {
               name="coffee-type"
               value="Robusta"
               checked={beanType === "Robusta"}
+              onClick={() => setSelectedBeanType("RobustaPreview")}
               onChange={handleBeanTypeChange}
             />
             {selectedType === "Robusta" && (
-              <img src={BeanRadio} alt="Bean Radio" className="h-9" />
+              <img src={BeanRadio} alt="Bean Radio" className="h-10" />
             )}
           </label>
           {/* <br /> */}
@@ -120,10 +131,11 @@ function Order() {
               name="coffee-type"
               value="Liberica"
               checked={beanType === "Liberica"}
+              onClick={() => setSelectedBeanType("LibericaPreview")}
               onChange={handleBeanTypeChange}
             />
             {selectedType === "Liberica" && (
-              <img src={BeanRadio} alt="Bean Radio" className="h-9" />
+              <img src={BeanRadio} alt="Bean Radio" className="h-10" />
             )}
           </label>
           {/* <br /> */}
@@ -142,7 +154,7 @@ function Order() {
               onChange={handleBeanAmountChange}
             />
             {selectedAmount === "5 kg" && (
-              <img src={BeanRadio} alt="Bean Radio" className="h-9" />
+              <img src={BeanRadio} alt="Bean Radio" className="h-10" />
             )}
           </label>
           <label className={labelClasses}>
@@ -156,7 +168,7 @@ function Order() {
               onChange={handleBeanAmountChange}
             />
             {selectedAmount === "15 kg" && (
-              <img src={BeanRadio} alt="Bean Radio" className="h-9" />
+              <img src={BeanRadio} alt="Bean Radio" className="h-10" />
             )}
           </label>
           <label className={labelClasses}>
@@ -170,7 +182,7 @@ function Order() {
               onChange={handleBeanAmountChange}
             />
             {selectedAmount === "30 kg" && (
-              <img src={BeanRadio} alt="Bean Radio" className="h-9" />
+              <img src={BeanRadio} alt="Bean Radio" className="h-10" />
             )}
           </label>
         </form>
@@ -199,7 +211,15 @@ function Order() {
           Add To Cart
         </button>
       </div>
-      <div className="cart-animation"></div>
+      <div className="cart-animation flex items-center justify-center">
+        {/* Render the EmptyCart component */}
+        {beanTypeMap[selectedBeanType]}
+
+        {/* <EmptyCart /> */}
+        {/* <BeanTypePreview.ArabicaPreview /> */}
+        {/* <BeanTypePreview.RobustaPreview /> */}
+        {/* <BeanTypePreview.LibericaPreview /> */}
+      </div>
     </div>
   );
 }

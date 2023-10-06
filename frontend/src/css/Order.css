@@ -72,7 +72,6 @@ input {
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
   background-color: #E5E5CB;
-  /* border: 2px solid pink; */
 }
 
 @media (max-width: 1107px) {
@@ -86,5 +85,6 @@ input {
   }
   .cart-animation {
     display: none;
+    background-color: #e5e5cb;
   }
 }
