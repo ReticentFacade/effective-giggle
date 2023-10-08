@@ -6,15 +6,30 @@ const RobustaPreview = () => {
   const imgRef = useRef(null);
 
   useEffect(() => {
+    // anime({
+    //   targets: imgRef.current,
+    //   translateX: [
+    //     {
+    //       value: 250,
+    //       duration: 0,
+    //     },
+    //     {
+    //       value: 0,
+    //       duration: 800,
+    //     },
+    //   ],
+    //   scale: 2,
+    //   rotate: "1turn",
+    // });
     anime({
       targets: imgRef.current,
       translateX: [
         {
-          value: 250, 
-          duration: 0, 
+          value: 250,
+          duration: 0,
         },
         {
-          value: 0, 
+          value: 0,
           duration: 800,
         },
       ],

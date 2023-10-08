@@ -8,9 +8,9 @@ const LibericaPreview = () => {
   useEffect(() => {
     anime({
       targets: imgRef.current,
-      translateX: [
+      translateY: [
         {
-          value: -250, // Start from -250px
+          value: 250, // Start from -250px
           duration: 0, // No animation for starting position
         },
         {

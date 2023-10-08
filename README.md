@@ -7,6 +7,7 @@ Seed-to-Sip (CoffeeBean Shop) is a web application that uses React.js and Tailwi
 - **Frontend**:
   - React.js
   - Tailwind CSS
+  - Animejs
 
 - **Backend**:
   - Node.js

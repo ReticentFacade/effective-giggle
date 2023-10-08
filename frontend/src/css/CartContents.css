@@ -1,0 +1,11 @@
+.cart-contents {
+    border: 2px solid rgb(61, 43, 33);
+    border-radius: 20px;
+}
+
+.bean-rate {
+    background-color: rgba(102, 80, 69, 0.784);
+    color: #e5e5cb;
+    border-radius: 10px;
+    /* border: 2px solid rgb(61, 43, 33); */
+}

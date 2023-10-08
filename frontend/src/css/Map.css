@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500&display=swap");
+
+.map-body {
+  background-color: #e5e5cb;
+}
+
+/* .map-body > * + * {
+  margin-top: 2.5rem;
+} */
+
+.map-svg {
+  display: block;
+  width: 250px;
+  height: auto;
+}
+/* 
+.map-button {
+  font-family: inherit;
+  border: none;
+  border-radius: 5px;
+  background: #242539;
+  color: #4dc498;
+  text-shadow: 0 1px 5px hsla(0, 0%, 0%, 0.1);
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+  font-size: 1.1rem;
+  transition-property: opacity, visibility, transform;
+  transition-duration: 0.25s;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+} */
+
+/* .hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+} */
+
+.flip-horizontal {
+  transform: scaleX(-1);
+}

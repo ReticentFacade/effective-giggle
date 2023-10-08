@@ -5,6 +5,8 @@ import instance from "../utils/api.js";
 import BeanRadio from "../assets/Order/beanRadio.png";
 import EmptyCart from "../components/CartPreview/EmptyCart.js";
 import BeanTypePreview from "../components/CartPreview/BeanTypes/index.js";
+import DeliveryTruckPreview from "../components/CartPreview/Delivery/DeliveryTruck.js";
+import PlaceOrder from "../components/CartPreview/PlaceOrder/index.js";
 
 function Order() {
   const required = (value) => {
@@ -13,13 +15,25 @@ function Order() {
     }
   };
 
-  const [selectedBeanType, setSelectedBeanType] = useState("EmptyCart");
-  const beanTypeMap = {
+  const [selectedPreviewOption, setSelectedPreviewOption] =
+    useState("EmptyCart");
+  const previewOptionMap = {
     EmptyCart: <EmptyCart />,
+
+    // Bean Types:
     ArabicaPreview: <BeanTypePreview.ArabicaPreview />,
     RobustaPreview: <BeanTypePreview.RobustaPreview />,
     LibericaPreview: <BeanTypePreview.LibericaPreview />,
+
+    // Delivery:
+    DeliveryTruckPreview: <DeliveryTruckPreview />,
+
+    // Place Order:
+    PlaceOrder: <PlaceOrder />,
   };
+
+  // State variable to track if the delivery input has been clicked
+  const [deliveryInputClicked, setDeliveryInputClicked] = useState(false);
 
   const [beanType, setBeanType] = useState("");
   const [beanAmount, setBeanAmount] = useState("");
@@ -38,6 +52,11 @@ function Order() {
   const handleDeliveryAddressChange = (event) => {
     setDeliveryAddress(event.target.value);
   };
+  // Handle the delivery input click event
+  const handleDeliveryInputClick = () => {
+    setDeliveryInputClicked(true);
+  };
+
   const handleAddToCart = async () => {
     // Create an object with the user input data:
     const orderData = {
@@ -97,7 +116,7 @@ function Order() {
               name="coffee-type"
               value="Arabica"
               checked={beanType === "Arabica"}
-              onClick={() => setSelectedBeanType("ArabicaPreview")}
+              onClick={() => setSelectedPreviewOption("ArabicaPreview")}
               onChange={handleBeanTypeChange}
             />
             {selectedType === "Arabica" && (
@@ -113,7 +132,7 @@ function Order() {
               name="coffee-type"
               value="Robusta"
               checked={beanType === "Robusta"}
-              onClick={() => setSelectedBeanType("RobustaPreview")}
+              onClick={() => setSelectedPreviewOption("RobustaPreview")}
               onChange={handleBeanTypeChange}
             />
             {selectedType === "Robusta" && (
@@ -131,7 +150,7 @@ function Order() {
               name="coffee-type"
               value="Liberica"
               checked={beanType === "Liberica"}
-              onClick={() => setSelectedBeanType("LibericaPreview")}
+              onClick={() => setSelectedPreviewOption("LibericaPreview")}
               onChange={handleBeanTypeChange}
             />
             {selectedType === "Liberica" && (
@@ -196,8 +215,13 @@ function Order() {
               value={deliveryAddress}
               className="delivery-address"
               placeholder="123 Main Street"
-              validations={{ required }}
+              // TODO: Fix `required` attribute. Check if it's working??
+              required // Use the 'required' attribute directly
               onChange={handleDeliveryAddressChange}
+              onClick={() => {
+                setSelectedPreviewOption("DeliveryTruckPreview");
+                handleDeliveryInputClick();
+              }}
               style={{ backgroundColor: "#e5e5cb" }}
             />
           </label>
@@ -205,7 +229,10 @@ function Order() {
 
         <button
           className="btn login-auth-btn"
-          onClick={handleAddToCart}
+          onClick={() => {
+            handleAddToCart();
+            setSelectedPreviewOption("PlaceOrder");
+          }}
           {...cartAlert}
         >
           Add To Cart
@@ -213,12 +240,7 @@ function Order() {
       </div>
       <div className="cart-animation flex items-center justify-center">
         {/* Render the EmptyCart component */}
-        {beanTypeMap[selectedBeanType]}
-
-        {/* <EmptyCart /> */}
-        {/* <BeanTypePreview.ArabicaPreview /> */}
-        {/* <BeanTypePreview.RobustaPreview /> */}
-        {/* <BeanTypePreview.LibericaPreview /> */}
+        {previewOptionMap[selectedPreviewOption]}
       </div>
     </div>
   );
