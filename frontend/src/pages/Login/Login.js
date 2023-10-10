@@ -45,7 +45,7 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen flex justify-center">
+    <div className="min-h-screen flex justify-center mr-14">
       <div className="user-details">
         <h1 className="mt-20 text-left">Login here:</h1>
         <form className="user-details-form flex-col mt-24 mb-24">

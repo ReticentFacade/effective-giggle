@@ -13,10 +13,9 @@ import aboutBeforeHover from "./beforeHover_icons/aboutBeforeHover.png";
 import socialsBeforeHover from "./beforeHover_icons/socialsBeforeHover.png";
 import socialsOnHover from "./onHover_icons/socialsOnHover.png";
 
-
 export default function Navbar() {
   return (
-    <div className="navbar">
+    <div className="navbar mt-20 pl-0 mr-2">
       <button className="login-btn">
         <Link to="login">
           <img

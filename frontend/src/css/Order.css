@@ -71,18 +71,17 @@ input {
   height: 90vh;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
-  background-color: #E5E5CB;
+  background-color: #e5e5cb;
 }
 
-@media (max-width: 1107px) {
+@media (max-width: 1300px) {
   .order-side {
     width: 90vw;
     display: flex;
     flex-direction: column;
     text-align: left;
-    align-items: center;
-    justify-content: center;
   }
+
   .cart-animation {
     display: none;
     background-color: #e5e5cb;

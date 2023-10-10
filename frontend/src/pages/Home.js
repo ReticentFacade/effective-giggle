@@ -6,9 +6,11 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="home-container flex justify-center items-center px-4 pt-12 mt-11 ml-11 mr-32">
-      <div className="div1 w-2/5 mx-11">
-        <div className="bigCoffee">
+    // <div className="home-container flex justify-center items-center px-4 pt-12 mt-11 ml-11 mr-32">
+    //   <div className="div1 w-2/5 mx-11">
+    <div className="home-container flex flex-col xl:flex-row justify-center items-center px-4 pt-12 mt-11 ml-11 mr-2 md:mr-32 xl:mb-4">
+      <div className="div1 w-full xl:w-2/5 mx-2 xl:mx-11">
+        <div className="bigCoffee mr-10">
           <img
             id="bigCoffeeBag"
             src={bigCoffee}
@@ -33,7 +35,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="home-beans flex flex-col items-center">
+        <div className="hidden xl:block home-beans flex flex-col items-center">
           <div>
             <img
               src={oneCoffeeBean}
@@ -47,7 +49,7 @@ const Home = () => {
               src={oneCoffeeBean}
               alt="oneCoffee"
               id="rightBean"
-              className="oneCoffeeBean w-32 h-24 transform transparent-bg"
+              className="oneCoffeeBean w-32 h-24 transform transparent-bg md:mt-0"
             />
           </div>
         </div>

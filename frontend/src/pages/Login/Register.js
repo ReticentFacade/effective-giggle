@@ -62,7 +62,7 @@ function Register() {
   };
 
   return (
-    <div className="min-h-screen flex justify-center">
+    <div className="min-h-screen flex justify-center sm:mr-20">
       <div className="user-details">
         <h1 className="mt-20 text-left">Register here:</h1>
         <form className="user-details-form mt-24 mb-4 flex-col">

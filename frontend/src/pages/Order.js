@@ -107,7 +107,7 @@ function Order() {
         <h1>Customize your order</h1>
 
         <h2>Coffee Type</h2>
-        <form className="coffee-type pt-4 pb-4">
+        <form className="coffee-type pt-4">
           <label className={labelClasses}>
             Arabica
             <input
