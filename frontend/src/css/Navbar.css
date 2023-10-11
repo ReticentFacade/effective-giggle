@@ -5,7 +5,8 @@
   align-items: flex-end;
   justify-content: flex-end;
 
-  position: absolute; /* or "fixed" if you want it to stay in place when scrolling */
+  /* or "fixed" if you want it to stay in place when scrolling */
+  /* position: absolute;  */
   top: 0;
   right: 0;
 }

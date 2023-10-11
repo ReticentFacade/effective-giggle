@@ -102,8 +102,8 @@ function Order() {
     "radio-btn h-5 w-5 text-indigo-600 form-radio focus:ring-indigo-500";
 
   return (
-    <div className="page ml-10 mr-32">
-      <div className="order-side ml-5">
+    <div className="page mt-10 ml-10 mr-32 min-w-[440px] min-h-max">
+      <div className="order-side ml-5 -mt-10 sm:mt-2">
         <h1>Customize your order</h1>
 
         <h2>Coffee Type</h2>
@@ -213,7 +213,7 @@ function Order() {
               type="text"
               name="delivery-address"
               value={deliveryAddress}
-              className="delivery-address"
+              className="delivery-address min-w-[250px]"
               placeholder="123 Main Street"
               // TODO: Fix `required` attribute. Check if it's working??
               required // Use the 'required' attribute directly
@@ -228,7 +228,7 @@ function Order() {
         </form>
 
         <button
-          className="btn login-auth-btn"
+          className="btn login-auth-btn min-w-[250px] sm:pb-2 sm:m-0"
           onClick={() => {
             handleAddToCart();
             setSelectedPreviewOption("PlaceOrder");

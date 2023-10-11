@@ -15,7 +15,7 @@ import socialsOnHover from "./onHover_icons/socialsOnHover.png";
 
 export default function Navbar() {
   return (
-    <div className="navbar mt-20 pl-0 mr-2">
+    <div className="navbar fixed top-0 right-0 mt-20 pl-0 mr-2">
       <button className="login-btn">
         <Link to="login">
           <img

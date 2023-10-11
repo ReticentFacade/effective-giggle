@@ -4,7 +4,7 @@
 .page {
   display: flex;
   border-radius: 1rem;
-  margin-top: 1.5rem;
+  /* margin-top: 2rem; */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   /* border: 2px solid black; */
 }
@@ -12,10 +12,12 @@
   text-align: left;
   padding: 1rem;
   width: 30vw;
-  /* border: 1px solid purple; */
+  /* z-index: 1; */
+  /* position: relative; */
+  top: 0px;
 }
 h1 {
-  margin: 2rem 0 1.5rem 1rem;
+  margin: 1rem 0 1.5rem 1rem;
   font-size: 2rem;
   font-weight: bolder;
 }

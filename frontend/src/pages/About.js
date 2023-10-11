@@ -16,12 +16,12 @@ function About() {
   };
 
   return (
-    <div className="about-us-container px-4 pt-12 mt-10 ml-11 mr-32">
+    <div className="about-us-container px-4 pt-12 mt-10 ml-11 mr-32 min-w-[820px]">
       {/* Render the selected content */}
       {contentMap[selectedContent]}
 
       {/* Buttons:  */}
-      <div className="about-us-btns mt-8">
+      <div className="about-us-btns mt-8 sm:flex-col">
         <button
           className="btn login-auth-btn"
           onClick={() => setSelectedContent("Mission")}
