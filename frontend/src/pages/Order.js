@@ -103,11 +103,11 @@ function Order() {
 
   return (
     <div className="page mt-10 ml-10 mr-32 min-w-[440px] min-h-max">
-      <div className="order-side ml-5 -mt-10 sm:mt-2">
+      <div className="order-side ml-5 -mt-10 sm:mt-4">
         <h1>Customize your order</h1>
 
         <h2>Coffee Type</h2>
-        <form className="coffee-type pt-4">
+        <form className="coffee-type pt-4 min-w-[580px]">
           <label className={labelClasses}>
             Arabica
             <input
@@ -228,7 +228,7 @@ function Order() {
         </form>
 
         <button
-          className="btn login-auth-btn min-w-[250px] sm:pb-2 sm:m-0"
+          className="btn login-auth-btn min-w-[250px] sm:pb-2 sm:m-0 md:m-2"
           onClick={() => {
             handleAddToCart();
             setSelectedPreviewOption("PlaceOrder");

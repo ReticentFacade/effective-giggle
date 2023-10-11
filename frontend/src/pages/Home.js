@@ -8,9 +8,9 @@ const Home = () => {
   return (
     // <div className="home-container flex justify-center items-center px-4 pt-12 mt-11 ml-11 mr-32">
     //   <div className="div1 w-2/5 mx-11">
-    <div className="home-container flex flex-col xl:flex-row justify-center items-center px-4 pt-12 mt-11 ml-11 mr-2 min-w-[628px] md:mr-32 xl:mb-4">
-      <div className="div1 w-full xl:w-2/5 mx-2 xl:mx-11">
-        <div className="bigCoffee mr-10">
+    <div className="home-container flex flex-col xl:flex-row justify-center items-center px-4 pt-12 xl:mt-12 mr-2 min-w-[628px] xl:mb-4">
+      <div className="div1 xl:w-2/5 mx-2 xl:mx-11">
+        <div className="bigCoffee mr-10 sm:-mb-20">
           <img
             id="bigCoffeeBag"
             src={bigCoffee}
@@ -20,8 +20,8 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="div2 w-3/5 flex">
-        <div className="home-text text-4xl text-left">
+      <div className="div2 md:w-3/5 flex">
+        <div className="home-text sm:text-4xl md:text-4xl text-left">
           <p>
             Get the perfect <br />
             <b>COFFEE BEANS</b> <br />
@@ -41,7 +41,7 @@ const Home = () => {
               src={oneCoffeeBean}
               alt="oneCoffee"
               id="leftBean"
-              className="oneCoffeeBean w-32 h-24 transform transparent-bg"
+              className="oneCoffeeBean md:w-32 md:h-24 transform transparent-bg"
             />
           </div>
           <div>
@@ -49,7 +49,7 @@ const Home = () => {
               src={oneCoffeeBean}
               alt="oneCoffee"
               id="rightBean"
-              className="oneCoffeeBean w-32 h-24 transform transparent-bg md:mt-0"
+              className="oneCoffeeBean md:w-32 md:h-24 transform transparent-bg md:mt-0 sm:mb-20"
             />
           </div>
         </div>

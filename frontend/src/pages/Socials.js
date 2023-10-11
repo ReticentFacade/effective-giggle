@@ -29,7 +29,7 @@ function Socials() {
 
   return (
     <div className="socials-container px-4 pt-12 mt-10 ml-11 mr-32">
-      <h1 className="text-3xl font-bold underline pb-12 mt-10 mb-20">
+      <h1 className="overflow-hidden lg:text-3xl font-bold underline sm:pb-12 sm:mt-10 sm:mb-20">
         Connect with us on social media! <br />
       </h1>
 
