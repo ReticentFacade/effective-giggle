@@ -52,7 +52,7 @@ const CartContents = () => {
           <div
             className={`${
               cartData.length > maxCartItems
-                ? "max-h-[300px] overflow-y-scroll bg-transparent"
+                ? "bg-transparent max-h-[300px] overflow-y-scroll"
                 : ""
             }`}
           >
