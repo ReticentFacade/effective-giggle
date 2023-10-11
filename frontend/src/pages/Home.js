@@ -10,18 +10,18 @@ const Home = () => {
     //   <div className="div1 w-2/5 mx-11">
     <div className="home-container flex flex-col xl:flex-row justify-center items-center px-4 pt-12 xl:mt-12 mr-2 min-w-[628px] xl:mb-4">
       <div className="div1 xl:w-2/5 mx-2 xl:mx-11">
-        <div className="bigCoffee mr-10 sm:-mb-20">
+        <div className="bigCoffee mr-10">
           <img
             id="bigCoffeeBag"
             src={bigCoffee}
             alt="bigCoffeeBag"
-            className="w-40rem"
+            className="max-w-[550px] max-h-[550px]"
           />
         </div>
       </div>
 
       <div className="div2 md:w-3/5 flex">
-        <div className="home-text sm:text-4xl md:text-4xl text-left">
+        <div className="home-text text-3xl xl:text-4xl text-left">
           <p>
             Get the perfect <br />
             <b>COFFEE BEANS</b> <br />
