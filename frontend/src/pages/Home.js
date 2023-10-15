@@ -9,7 +9,7 @@ const Home = () => {
     // <div className="home-container flex justify-center items-center px-4 pt-12 mt-11 ml-11 mr-32">
     //   <div className="div1 w-2/5 mx-11">
     <div className="home-container flex flex-col xl:flex-row justify-center items-center px-4 pt-12 xl:mt-12 mr-2 min-w-[628px] xl:mb-4">
-      <div className="div1 xl:w-2/5 mx-2 xl:mx-11">
+      <div className="div1 xl:w-2/5 mx-2 xl:mx-11 sm:max-md:w-1/3">
         <div className="bigCoffee mr-10">
           <img
             id="bigCoffeeBag"
@@ -20,7 +20,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="div2 md:w-3/5 flex">
+      <div className="div2 md:w-3/5 flex sm:max-md:w-2/3">
         <div className="home-text text-3xl xl:text-4xl text-left">
           <p>
             Get the perfect <br />

@@ -17,14 +17,16 @@ function Socials() {
   const buttonClasses = `ease-in-out transform hover:scale-125 transition duration-500 px-6 py-2 m-6 inline`;
   const discordBgClass = discordHovered ? "bg-dark-button" : "bg-light-button";
   const discordColor = discordHovered ? "#e5e5cb" : "#3d2b21";
-  
+
   const metaBgClass = metaHovered ? "bg-dark-button" : "bg-light-button";
   const metaColor = metaHovered ? "#e5e5cb" : "#3d2b21";
 
   const twitterBgClass = twitterHovered ? "bg-dark-button" : "bg-light-button";
   const twitterColor = twitterHovered ? "#e5e5cb" : "#3d2b21";
 
-  const instagramBgClass = instagramHovered ? "bg-dark-button" : "bg-light-button";
+  const instagramBgClass = instagramHovered
+    ? "bg-dark-button"
+    : "bg-light-button";
   const instagramColor = instagramHovered ? "#e5e5cb" : "#3d2b21";
 
   return (
@@ -33,7 +35,7 @@ function Socials() {
         Connect with us on social media! <br />
       </h1>
 
-      <div className="social-btns">
+      <div className="social-btns flex flex-wrap">
         <button className={buttonClasses}>
           <Link to="https://discord.gg/3vXzG8J">
             <DiscordLogo
@@ -47,7 +49,7 @@ function Socials() {
           </Link>
         </button>
 
-        <button className={buttonClasses}>
+        <button className={buttonClasses} style={{ zIndex: 0 }}>
           <Link to="https://facebook.com">
             <MetaLogo
               size={52}
@@ -60,7 +62,7 @@ function Socials() {
           </Link>
         </button>
 
-        <button className={buttonClasses}>
+        <button className={buttonClasses} style={{ zIndex: 0 }}>
           <Link to="https://twitter.com">
             <TwitterLogo
               size={52}
@@ -73,7 +75,7 @@ function Socials() {
           </Link>
         </button>
 
-        <button className={buttonClasses}>
+        <button className={buttonClasses} style={{ zIndex: 0 }}>
           <Link to="https://instagram.com">
             <InstagramLogo
               size={52}
