@@ -1,9 +1,19 @@
 import React from "react";
-// import axios from "axios";
 import instance from "../../utils/api.js";
 import { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../css/Login.css";
+import NotFound from "../../components/404.js";
+
+// ==================== Local Storage =====================
+const setTokenInLocalStorage = (token) => {
+  localStorage.setItem("token", token);
+};
+
+const removeTokenFromLocalStorage = () => {
+  localStorage.removeItem("token");
+};
+// =========================================================
 
 function Login() {
   const required = (value) => {
@@ -30,17 +40,30 @@ function Login() {
         username,
         password,
       });
-      console.log(response.data);
+      console.log("Response -----> ", response);
+      console.log("response.data ---->", response.data);
 
       if (response.status === 200) {
         // Redirect to homepage
-        window.location.href = "/order";
         console.log("Login successful!");
+        window.location.href = "/order";
+
+        // Access the token from the response's message
+        const token = response.data.message.token;
+
+        if (token) {
+          setTokenInLocalStorage(token);
+          console.log("This is your token: ", token);
+        } else {
+          console.error("Token not found in the message.");
+        }
       } else {
         console.error("Login error: ", response.error);
       }
     } catch (error) {
       console.error("Login error: ", error);
+      // Redirect to the 404 page when login fails
+      window.location.href = "/404";
     }
   };
 

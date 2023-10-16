@@ -35,7 +35,7 @@ function Socials() {
         Connect with us on social media! <br />
       </h1>
 
-      <div className="social-btns flex flex-wrap">
+      <div className="social-btns flex items-center justify-center flex-wrap">
         <button className={buttonClasses}>
           <Link to="https://discord.gg/3vXzG8J">
             <DiscordLogo

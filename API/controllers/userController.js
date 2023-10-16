@@ -136,6 +136,7 @@ const login = async (req, res) => {
               username: userData.username,
               email: userData.email,
               hashedPass: userData.password,
+              token: token,
             },
           });
         }

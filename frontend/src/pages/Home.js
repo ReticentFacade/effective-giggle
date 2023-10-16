@@ -6,8 +6,6 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    // <div className="home-container flex justify-center items-center px-4 pt-12 mt-11 ml-11 mr-32">
-    //   <div className="div1 w-2/5 mx-11">
     <div className="home-container flex flex-col xl:flex-row justify-center items-center px-4 pt-12 xl:mt-12 mr-2 min-w-[628px] xl:mb-4">
       <div className="div1 xl:w-2/5 mx-2 xl:mx-11 sm:max-md:w-1/3">
         <div className="bigCoffee mr-10">

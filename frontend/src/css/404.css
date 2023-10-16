@@ -1,0 +1,79 @@
+.not-found {
+  font-family: Montserrat, sans-serif;
+  font-size: 180px;
+  font-weight: bold;
+  box-sizing: border-box;
+  margin: 0;
+
+  width: 100vw;
+  height: 100vh;
+  background: rgb(60, 42, 33);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e5e4ca;
+  margin: 0;
+}
+
+.transparent-navbar {
+    background: transparent;
+}
+
+.glitch {
+  color: #e5e4ca;
+  position: absolute;
+  z-index: 1;
+}
+
+.glitch:before,
+.glitch:after {
+  content: "404";
+  position: absolute;
+  left: 0;
+  z-index: -1;
+}
+
+.glitch:before {
+  color: blue;
+  clip-path: polygon(0 0%, 100% 0%, 100% 66%, 0 66%);
+  animation: slide-right 0.15s ease-in-out infinite;
+}
+
+.glitch:after {
+  color: red;
+  clip-path: polygon(0 33%, 100% 33%, 100% 100%, 0 100%);
+  animation: slide-left 0.2s ease-in-out infinite;
+}
+
+@keyframes slide-left {
+  to {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes slide-right {
+  to {
+    transform: translateX(-2px);
+  }
+}
+
+.offset {
+  transform: translateX(-2px);
+  animation: offset 2s ease infinite;
+  background: rgb(60, 42, 33);
+  position: absolute;
+  z-index: 2;
+  color: #e5e4ca;
+}
+
+@keyframes offset {
+  from {
+    clip-path: polygon(0 0%, 100% 0%, 100% 15%, 0 15%);
+  }
+  50% {
+    clip-path: polygon(0 85%, 100% 85%, 100% 100%, 0 100%);
+  }
+  to {
+    clip-path: polygon(0 0%, 100% 0%, 100% 15%, 0 15%);
+  }
+}
