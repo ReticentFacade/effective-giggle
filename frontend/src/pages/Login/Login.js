@@ -22,6 +22,9 @@ function Login() {
     }
   };
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userName, setUserName] = useState("");
+
   const usernameInputRef = useRef();
   const passwordInputRef = useRef();
 
@@ -40,20 +43,22 @@ function Login() {
         username,
         password,
       });
-      console.log("Response -----> ", response);
-      console.log("response.data ---->", response.data);
 
       if (response.status === 200) {
         // Redirect to homepage
         console.log("Login successful!");
-        window.location.href = "/order";
 
         // Access the token from the response's message
         const token = response.data.message.token;
 
+        // Set the user's name after successful login
+        setUserName(username);
+        // Update the login state to true
+        setIsLoggedIn(true);
+
+        window.location.href = "/order";
         if (token) {
           setTokenInLocalStorage(token);
-          console.log("This is your token: ", token);
         } else {
           console.error("Token not found in the message.");
         }
