@@ -7,15 +7,23 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+    "build": "npx prisma db push && npx prisma generate && npm build",
+    "generate": "npx prisma generate",
+    "postinstall": "prisma generate",
     "sequelize": "sequelize",
     "db:migrate": "sequelize db:migrate",
     "db:seed:all": "sequelize db:seed:all",
-    "db:seed:undo:all": "sequelize db:seed:undo:all"
+    "db:seed:undo:all": "sequelize db:seed:undo:all",
+    "vercel-build": "npx prisma generate && next build"
+  },
+  "prisma": {
+    "schema": "prisma/schema.prisma"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^5.5.0",
     "bcrypt": "^5.0.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
@@ -25,10 +33,13 @@
     "jsonwebtoken": "^9.0.0",
     "morgan": "^1.10.0",
     "node-localstorage": "^2.2.1",
-    "nodemon": "^2.0.22",
+    "nodemon": "^3.0.1",
     "pg": "^8.11.1",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.32.1",
+    "sequelize": "^6.33.0",
     "sequelize-cli": "^6.6.1"
+  },
+  "devDependencies": {
+    "prisma": "^5.5.0"
   }
 }

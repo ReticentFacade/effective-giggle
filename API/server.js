@@ -4,6 +4,12 @@ import sequelize from "./config/connection.js";
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
 import cors from "cors";
+import { prisma } from "./lib/prisma.js";
+// import { PrismaClient } from '@prisma/client';
+
+// const prismaClient = new prisma.PrismaClient();
+// const prisma = new PrismaClient();
+console.log("API/server.js: prismaClient ");
 
 const app = express();
 const PORT = process.env.PORT || 3001;

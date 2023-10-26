@@ -1,0 +1,69 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model Admin {
+  roleId        Int     @default(autoincrement()) @id
+  adminName     String
+  email         String?     @unique
+}
+
+model Cart {
+    id          Int     @default(autoincrement()) @id
+    beanType    String
+    beanAmount  Int
+    beanPrice   Int
+}
+
+model CoffeeBean {
+    id         Int     @default(autoincrement()) @id
+    type       String
+    amount     Int
+    price      Int
+}
+
+model Order {
+    orderId     Int     @default(autoincrement()) @id
+    username    String
+    orderItems  String[]
+    totalAmount Float
+}
+
+model Product {
+    id           Int     @default(autoincrement()) @id
+    product_name String
+    price        Int 
+    stock        Int
+}
+
+model Role {
+    roleId       Int     @default(autoincrement()) @id
+    name         String
+}
+
+model Seller {
+    roleId        Int     @default(autoincrement()) @id
+    sellerName    String
+    email         String?     @unique
+}
+
+model User {
+  roleId        Int     @default(autoincrement()) @id
+  username      String?
+  email         String?     @unique
+  @@map(name: "users")
+}
+
+model UserDetails {
+    id            Int     @default(autoincrement()) @id
+    username      String
+    userAddress   String
+}
