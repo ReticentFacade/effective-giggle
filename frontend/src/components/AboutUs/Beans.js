@@ -3,16 +3,18 @@ import beans from "../../assets/AboutUs/beans.png";
 function Beans() {
   return (
     <div>
-      <div className="text-3xl font-bold pb-12 mb-4">Our Beans</div>
-      <div className="about-us-box flex pb-4">
-        <div className="about-us-picture w-1/2 object-contain mr-8 ml-4">
+      {/* <div className="text-3xl font-bold pb-12 mb-4 overflow-y-auto min-h-full">Our Beans</div> */}
+      <div className="text-3xl font-bold pb-12 mb-4 overflow-y-auto min-h-full">Our Beans</div>
+      {/* <div className="about-us-box flex pb-4"> */}
+      <div className="about-us-box flex flex-col-reverse md:flex-row pb-4">
+        <div className="about-us-picture w-full md:w-1/2 object-contain mx-auto">
           <img
             src={beans}
             alt="mission-picture"
-            className="rounded-lg shadow-md w-11/12 h-auto"
+            className="rounded-lg shadow-md w-11/12"
           />
         </div>
-        <div className="about-us-text w-1/2 pr-6 text-left">
+        <div className="about-us-text w-full md:w-1/2 pr-6 text-left sm:mb-20">
           <p className="text-lg">
             At Seed-To-Sip, we believe that coffee is a rich tapestry of flavors
             waiting to be explored. Our beans are the heart and soul of every

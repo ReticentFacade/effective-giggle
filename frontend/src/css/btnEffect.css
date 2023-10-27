@@ -15,11 +15,12 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
+  background-color: #e5e5cb;
 }
 
 .btn:after {
   content: "";
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: 0;
   width: 100%;

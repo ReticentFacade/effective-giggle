@@ -106,7 +106,8 @@ function Order() {
       <div className="order-side ml-5 -mt-10 sm:mt-4">
         <h1>Customize your order</h1>
 
-        <h2>Coffee Type</h2>
+        {/* <h2>Coffee Type</h2> */}
+        <h2 className="text-2lg">Coffee Type</h2>
         <form className="coffee-type pt-4 min-w-[580px]">
           <label className={labelClasses}>
             Arabica
@@ -160,7 +161,7 @@ function Order() {
           {/* <br /> */}
         </form>
 
-        <h2>Coffee Amount</h2>
+        <h2 className="text-2lg">Coffee Amount</h2>
         <form className="coffee-amount pt-4 pb-4">
           <label className={labelClasses}>
             5 kg
@@ -206,7 +207,7 @@ function Order() {
           </label>
         </form>
 
-        <h2>Delivery Address</h2>
+        <h2 className="text-2lg">Delivery Address</h2>
         <form className="delivery-form pt-4 pb-6">
           <label>
             <input
@@ -228,7 +229,7 @@ function Order() {
         </form>
 
         <button
-          className="btn login-auth-btn min-w-[250px] sm:pb-2 sm:m-0 md:m-2"
+          className="btn login-auth-btn min-w-[250px]  sm:m-0 md:m-2"
           onClick={() => {
             handleAddToCart();
             setSelectedPreviewOption("PlaceOrder");

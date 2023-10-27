@@ -30,7 +30,7 @@ function Socials() {
   const instagramColor = instagramHovered ? "#e5e5cb" : "#3d2b21";
 
   return (
-    <div className="socials-container px-4 pt-12 mt-10 ml-11 mr-32">
+    <div className="socials-container px-4 pt-12 mt-10 ml-11 mr-32 overflow-y-auto min-h-full">
       <h1 className="overflow-hidden lg:text-3xl font-bold underline sm:pb-12 sm:mt-10 sm:mb-20">
         Connect with us on social media! <br />
       </h1>
