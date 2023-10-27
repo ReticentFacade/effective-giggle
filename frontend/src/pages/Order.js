@@ -102,12 +102,12 @@ function Order() {
     "radio-btn h-5 w-5 text-indigo-600 form-radio focus:ring-indigo-500";
 
   return (
-    <div className="page mt-10 ml-10 mr-32 min-w-[440px] min-h-max">
+    <div className="page mt-10 ml-10 mr-32 min-w-[440px] overflow-y-auto">
       <div className="order-side ml-5 -mt-10 sm:mt-4">
-        <h1>Customize your order</h1>
+        <h1 className="text-2lg">Customize your order</h1>
 
         {/* <h2>Coffee Type</h2> */}
-        <h2 className="text-2lg">Coffee Type</h2>
+        <h2 className="text-lg font-bold">Coffee Type</h2>
         <form className="coffee-type pt-4 min-w-[580px]">
           <label className={labelClasses}>
             Arabica
@@ -161,7 +161,7 @@ function Order() {
           {/* <br /> */}
         </form>
 
-        <h2 className="text-2lg">Coffee Amount</h2>
+        <h2 className="ext-lg font-bold">Coffee Amount</h2>
         <form className="coffee-amount pt-4 pb-4">
           <label className={labelClasses}>
             5 kg
@@ -207,7 +207,7 @@ function Order() {
           </label>
         </form>
 
-        <h2 className="text-2lg">Delivery Address</h2>
+        <h2 className="ext-lg font-bold">Delivery Address</h2>
         <form className="delivery-form pt-4 pb-6">
           <label>
             <input
