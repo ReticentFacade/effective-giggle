@@ -1,15 +1,12 @@
 import express from "express";
 import { router } from "./routes/index.js";
-import sequelize from "./config/connection.js";
+// import sequelize from "./config/connection.js";
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
 import cors from "cors";
 import { prisma } from "./lib/prisma.js";
-// import { PrismaClient } from '@prisma/client';
 
-// const prismaClient = new prisma.PrismaClient();
-// const prisma = new PrismaClient();
-console.log("API/server.js: prismaClient ");
+console.log("API/server.js:");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -27,9 +24,9 @@ app.use(router);
 
 app.use(morgan("combined"));
 
-sequelize.sync({ force: false }).then(() => {
-  console.log("Database & tables created!");
-});
+// sequelize.sync({ force: false }).then(() => {
+//   console.log("Database & tables created!");
+// });
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);

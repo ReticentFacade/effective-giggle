@@ -1,12 +1,13 @@
-import Admin from "../../models/Admin.js";
+// import Admin from "../../models/Admin.js";
 // import Role from "../../models/Role.js";
+import { prisma } from "../../lib/prisma.js";
 
 const addAdmin = async (req, res) => {
   try {
     const adminData = req.body;
 
     // Check if the admin already exists
-    const existingAdmin = await Admin.findOne({
+    const existingAdmin = await prisma.Admin.findUnique({
       where: {
         email: adminData.email,
       },
@@ -17,10 +18,10 @@ const addAdmin = async (req, res) => {
       return res.status(409).json({ message: "Admin already exists." });
     } else {
       // Create a new admin:
-      const newAdmin = await Admin.create(adminData);
-      
+      const newAdmin = await prisma.Admin.create(adminData);
+
       // console.log("New admin created: ", newAdmin);
-      
+
       // Just making it look better:
       console.log("New admin created: ");
       console.table(newAdmin, ["id", "roleId", "adminName", "email"]);

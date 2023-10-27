@@ -9,8 +9,9 @@ datasource db {
 }
 
 model Admin {
-  roleId    Int     @id @default(autoincrement())
-  adminName String
+  id        Int     @id @default(autoincrement())
+  roleId    Int     
+  adminName String  
   email     String? @unique
 }
 
