@@ -48,29 +48,31 @@ const CartContents = () => {
       </h1>
 
       <div className="bg-transparent mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
-        <div className="bg-transparent md:w-2/3">
+        <div className="bg-transparent md:w-2/3" style={{ backgroundColor: "#e5e5cb" }}>
           <div
             className={`${
               cartData.length > maxCartItems
                 ? "bg-transparent max-h-[300px] overflow-y-scroll"
                 : ""
             }`}
+            style={{ backgroundColor: "#e5e5cb" }}
           >
             {cartData.map((item, index) => (
               <div
                 key={index}
                 className="bg-transparent justify-between mb-6 rounded-lg p-6 shadow-md"
+                style={{ backgroundColor: "#e5e5cb" }}
               >
                 <div className="bg-transparent sm:flex sm:w-full sm:justify-between">
-                  <div className="bg-transparent mt-5 sm:mt-0">
-                    <h2 className="bg-transparent text-left text-lg font-bold">
+                  <div className="bg-transparent mt-5 sm:mt-0" style={{ backgroundColor: "#e5e5cb" }}>
+                    <h2 className="bg-transparent text-left text-lg font-bold" style={{ backgroundColor: "#e5e5cb" }}>
                       {item.beanType} Coffee Bean
                     </h2>
                     <p className="bg-transparent mt-1 text-center text-xs">
                       {item.beanAmount}
                     </p>
                   </div>
-                  <div className="bg-transparent mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
+                  <div className="bg-transparent mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6" style={{ backgroundColor: "#e5e5cb" }}>
                     <div className="bg-transparent flex items-center border-gray-100">
                       <span className="bean-rate rounded-r py-1 px-3">
                         ₹ {beanRates[item.beanType]} per kg
