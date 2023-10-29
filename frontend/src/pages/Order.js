@@ -97,7 +97,7 @@ function Order() {
     );
   }
 
-  const labelClasses = "flex items-center";
+  const labelClasses = "flex items-center text-sm";
   const radioClasses =
     "radio-btn h-5 w-5 text-indigo-600 form-radio focus:ring-indigo-500";
 
@@ -108,7 +108,7 @@ function Order() {
 
         {/* <h2>Coffee Type</h2> */}
         <h2 className="text-lg font-bold">Coffee Type</h2>
-        <form className="coffee-type pt-4 min-w-[580px]">
+        <form className="coffee-type pt-2 min-w-[580px]">
           <label className={labelClasses}>
             Arabica
             <input
@@ -161,8 +161,8 @@ function Order() {
           {/* <br /> */}
         </form>
 
-        <h2 className="ext-lg font-bold">Coffee Amount</h2>
-        <form className="coffee-amount pt-4 pb-4">
+        <h2 className="text-lg font-bold">Coffee Amount</h2>
+        <form className="coffee-amount pt-2 pb-2">
           <label className={labelClasses}>
             5 kg
             <input
@@ -207,8 +207,8 @@ function Order() {
           </label>
         </form>
 
-        <h2 className="ext-lg font-bold">Delivery Address</h2>
-        <form className="delivery-form pt-4 pb-6">
+        <h2 className="text-lg font-bold">Delivery Address</h2>
+        <form className="delivery-form pt-2 pb-2 mb-6">
           <label>
             <input
               type="text"

@@ -71,7 +71,7 @@ input {
 
 .cart-animation {
   width: 70vw;
-  /* height: 90vh; */
+  height: 100%;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
   background-color: #e5e5cb;
